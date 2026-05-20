@@ -1,0 +1,94 @@
+/* ============================================================
+   RENAISSE! — tokens.css
+   Design System Tokens — Brutalismo Refinado / Minimalismo Japonés
+   ============================================================ */
+
+:root {
+    /* ── Paleta ── */
+    --c-dark: #070340;
+    --c-gold: #E8BE58;
+    --c-gold-lt: #F2D07A;
+    --c-gold-dk: #B8942A;
+    --c-white: #FFFFFF;
+    --c-black: #000000;
+    --c-dark-80: rgba(7, 3, 64, 0.80);
+    --c-dark-60: rgba(7, 3, 64, 0.60);
+    --c-gold-20: rgba(232, 190, 88, 0.20);
+    --c-gold-08: rgba(232, 190, 88, 0.08);
+
+    /* ── Tipografía ── */
+    --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+    --font-sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+
+    /* ── Escala tipográfica (Fluida para Móvil) ── */
+    --text-2xs: clamp(0.625rem, 1.5vw, 0.75rem);
+    --text-xs: clamp(0.75rem, 1.8vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 2vw, 1rem);
+    --text-md: clamp(1rem, 2.2vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 2.5vw, 1.375rem);
+    --text-xl: clamp(1.375rem, 3.5vw, 1.75rem);
+    --text-2xl: clamp(1.75rem, 5vw, 2.5rem);
+    --text-3xl: clamp(2.5rem, 7vw, 4rem);
+    --text-4xl: clamp(3.5rem, 11vw, 7rem);
+    --text-hero: clamp(4.5rem, 18vw, 6rem);
+    /* Límite reducido */
+
+    /* ── Spacing ── */
+    --sp-2xs: 0.25rem;
+    --sp-xs: 0.5rem;
+    --sp-sm: 0.75rem;
+    --sp-md: 1rem;
+    --sp-lg: 1.5rem;
+    --sp-xl: 2rem;
+    --sp-2xl: 3rem;
+    --sp-3xl: 4.5rem;
+    --sp-4xl: 6rem;
+    --sp-5xl: 9rem;
+
+    /* ── Bordes ── */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* ── Sombras ── */
+    --shadow-gold: 0 0 32px rgba(232, 190, 88, 0.25);
+    --shadow-dark: 0 8px 40px rgba(7, 3, 64, 0.6);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-card: 0 12px 48px rgba(0, 0, 0, 0.35);
+
+    /* ── Transiciones ── */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --dur-fast: 200ms;
+    --dur-med: 400ms;
+    --dur-slow: 700ms;
+    --dur-xl: 1100ms;
+
+    /* ── Layout ── */
+    --container: min(100% - 2.5rem, 640px);
+    --container-wide: min(100% - 2rem, 900px);
+    --z-fab: 100;
+    --z-nav: 90;
+    --z-modal: 200;
+}
+
+/* 👇 NUEVO: Congela el tamaño del texto en Desktop para simular el móvil a la perfección */
+@media (min-width: 520px) {
+    :root {
+        --text-2xs: 0.75rem;
+        --text-xs: 0.875rem;
+        --text-sm: 1rem;
+        --text-md: 1.125rem;
+        --text-lg: 1.25rem;
+        --text-xl: 1.5rem;
+        --text-2xl: 2rem;
+        --text-3xl: 2.5rem;
+        --text-4xl: 3.5rem;
+        --text-hero: 4.5rem;
+        /* Exactamente 72px, idéntico a tu móvil */
+    }
+}

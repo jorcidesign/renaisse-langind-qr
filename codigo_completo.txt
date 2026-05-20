@@ -1,0 +1,3240 @@
+=====================================================================
+📁 ./.gitignore
+=====================================================================
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+=====================================================================
+📁 ./codigo_completo.txt
+=====================================================================
+
+
+
+=====================================================================
+📁 ./index.html
+=====================================================================
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Renaisse! — Maquillaje & Peinado Profesional en Lima. 40% OFF en tu primer servicio." />
+  <meta property="og:title" content="Renaisse! — Realzando tu belleza natural" />
+  <meta property="og:description"
+    content="Maquillaje social, novias y peinados profesionales en Lima. Agenda tu cita vía WhatsApp." />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta name="theme-color" content="#070340" />
+  <title>Renaisse! — Maquillaje & Peinado Profesional</title>
+
+  <!-- Preload de fuentes críticas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+
+<body>
+  <!-- Vite inyectará todo el JS y renderizará la web aquí -->
+  <div id="app"></div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
+
+=====================================================================
+📁 ./package-lock.json
+=====================================================================
+
+{
+  "name": "renaisse-landing",
+  "version": "0.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "renaisse-landing",
+      "version": "0.0.0",
+      "devDependencies": {
+        "typescript": "~6.0.2",
+        "vite": "^8.0.12"
+      }
+    },
+    "node_modules/@emnapi/core": {
+      "version": "1.10.0",
+      "resolved": "https://registry.npmjs.org/@emnapi/core/-/core-1.10.0.tgz",
+      "integrity": "sha512-yq6OkJ4p82CAfPl0u9mQebQHKPJkY7WrIuk205cTYnYe+k2Z8YBh11FrbRG/H6ihirqcacOgl2BIO8oyMQLeXw==",
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "peer": true,
+      "dependencies": {
+        "@emnapi/wasi-threads": "1.2.1",
+        "tslib": "^2.4.0"
+      }
+    },
+    "node_modules/@emnapi/runtime": {
+      "version": "1.10.0",
+      "resolved": "https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.10.0.tgz",
+      "integrity": "sha512-ewvYlk86xUoGI0zQRNq/mC+16R1QeDlKQy21Ki3oSYXNgLb45GV1P6A0M+/s6nyCuNDqe5VpaY84BzXGwVbwFA==",
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "peer": true,
+      "dependencies": {
+        "tslib": "^2.4.0"
+      }
+    },
+    "node_modules/@emnapi/wasi-threads": {
+      "version": "1.2.1",
+      "resolved": "https://registry.npmjs.org/@emnapi/wasi-threads/-/wasi-threads-1.2.1.tgz",
+      "integrity": "sha512-uTII7OYF+/Mes/MrcIOYp5yOtSMLBWSIoLPpcgwipoiKbli6k322tcoFsxoIIxPDqW01SQGAgko4EzZi2BNv2w==",
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "dependencies": {
+        "tslib": "^2.4.0"
+      }
+    },
+    "node_modules/@napi-rs/wasm-runtime": {
+      "version": "1.1.4",
+      "resolved": "https://registry.npmjs.org/@napi-rs/wasm-runtime/-/wasm-runtime-1.1.4.tgz",
+      "integrity": "sha512-3NQNNgA1YSlJb/kMH1ildASP9HW7/7kYnRI2szWJaofaS1hWmbGI4H+d3+22aGzXXN9IJ+n+GiFVcGipJP18ow==",
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "dependencies": {
+        "@tybys/wasm-util": "^0.10.1"
+      },
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/sponsors/Brooooooklyn"
+      },
+      "peerDependencies": {
+        "@emnapi/core": "^1.7.1",
+        "@emnapi/runtime": "^1.7.1"
+      }
+    },
+    "node_modules/@oxc-project/types": {
+      "version": "0.130.0",
+      "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.130.0.tgz",
+      "integrity": "sha512-ibD2usx9JRu7f5pu2tMKMI4cpA4NgXJQoYRP4pQ7Pxmn1l6k/53qWtQWZayhYy3X4QZkt90Ot+mJEaeXouio6Q==",
+      "dev": true,
+      "license": "MIT",
+      "funding": {
+        "url": "https://github.com/sponsors/Boshen"
+      }
+    },
+    "node_modules/@rolldown/binding-android-arm64": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-android-arm64/-/binding-android-arm64-1.0.1.tgz",
+      "integrity": "sha512-fJI3I0r3C3Oj/zdBCpaCmBRZYf07xpaq4yCfDDoSFm+beWNzbIl26puW8RraUdugoJw/95zerNOn6jasAhzSmg==",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "android"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-darwin-arm64": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-darwin-arm64/-/binding-darwin-arm64-1.0.1.tgz",
+      "integrity": "sha512-cKnAhWEsV7TPcA/5EAteDp6KcJZBQ2G+BqE7zayMMi7kMvwRsbv7WT9aOnn0WNl4SKEIf43vjS31iUPu80nzXg==",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "darwin"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-darwin-x64": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-darwin-x64/-/binding-darwin-x64-1.0.1.tgz",
+      "integrity": "sha512-YKrVwQjIRBPo+5G/u03wGjbdy4q7pyzCe93DK9VJ7zkVmeg8LJ7GbgsiHWdR4xSoe4CAXRD7Bcjgbtr64bkXNg==",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "darwin"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-freebsd-x64": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-freebsd-x64/-/binding-freebsd-x64-1.0.1.tgz",
+      "integrity": "sha512-z/oBsREo46SsFqBwYtFe0kpJeBijAT48O/WXLI4suiCLBkr03RTtTJMCzSdDd2znlh8VJizL09XVkQgk8IZonw==",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "freebsd"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-linux-arm-gnueabihf": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-arm-gnueabihf/-/binding-linux-arm-gnueabihf-1.0.1.tgz",
+      "integrity": "sha512-ik8q7GM11zxvYxFc2PeDcT6TBvhCQMaUxfph/M5l9sKuTs/Sjg3L+Byw0F7w0ZVLBZmx30P+gG0ECzzN+MFcmQ==",
+      "cpu": [
+        "arm"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "linux"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-linux-arm64-gnu": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-arm64-gnu/-/binding-linux-arm64-gnu-1.0.1.tgz",
+      "integrity": "sha512-QoSx2EkyrrdZ6kcyE8stqZ62t0Yra8Fs5ia9lOxJrh6TMQJK7gQKmscdTHf7pOXKREKrVwOtJcQG3qVSfc866A==",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "linux"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-linux-arm64-musl": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-arm64-musl/-/binding-linux-arm64-musl-1.0.1.tgz",
+      "integrity": "sha512-uwNwFpwKeNiZawfAWBgg0VIztPTV3ihhh1vV334h9ivnNLorxnQMU6Fz8wG1Zb4Qh9LC1/MkcyT3YlDXG3Rsgg==",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "linux"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-linux-ppc64-gnu": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-ppc64-gnu/-/binding-linux-ppc64-gnu-1.0.1.tgz",
+      "integrity": "sha512-zY1bul7OWr7DFBiJ++wofXvnr8B45ce3QsQUhKrIhXsygAh7bTkwyeM1bi1a2g5C/yC/N8TZyGDEoMfm/l9mpg==",
+      "cpu": [
+        "ppc64"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "linux"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-linux-s390x-gnu": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-s390x-gnu/-/binding-linux-s390x-gnu-1.0.1.tgz",
+      "integrity": "sha512-0frlsT/f4Ft6I7SMESTKnF3cZsdicQn1dCMkF/jT9wDLE+gGoiQfv1nmT9e+s7s/fekvvy6tZM2jHvI2tkbJDQ==",
+      "cpu": [
+        "s390x"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "linux"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-linux-x64-gnu": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.0.1.tgz",
+      "integrity": "sha512-XABVmGp9Tg0WspTVvwduTc4fpqy6JnAUrSQe6OuyqD/03nI7r0O9OWUkMIwFrjKAIqolvqoA4ZrJppgwE0Gxmw==",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "linux"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-linux-x64-musl": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.0.1.tgz",
+      "integrity": "sha512-bV4fzswuzVcKD90o/VM6QqKxnxlDq0g2BISDLNVmxrnhpv1DDbyPhCIjYfvzYLV+MvkKKnQt2Q6AO86SEBULUQ==",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "linux"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-openharmony-arm64": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-openharmony-arm64/-/binding-openharmony-arm64-1.0.1.tgz",
+      "integrity": "sha512-/Mh0Zhq3OP7fVs0kcQHZP6lZEthMGTaSf8UBQYSFEZDWGXXlEC+nJ6EqenaK2t4LBXMe3A+K/G2BVXXdtOr4PQ==",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "openharmony"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-wasm32-wasi": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-wasm32-wasi/-/binding-wasm32-wasi-1.0.1.tgz",
+      "integrity": "sha512-+1xc9X45l8ufsBAm6Gjvx2qDRIY9lTVt0cgWNcJ+1gdhXvkbxePA60yRTwSTuXL09CMhyJmjpV7E3NoyxbqFQQ==",
+      "cpu": [
+        "wasm32"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "dependencies": {
+        "@emnapi/core": "1.10.0",
+        "@emnapi/runtime": "1.10.0",
+        "@napi-rs/wasm-runtime": "^1.1.4"
+      },
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-win32-arm64-msvc": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-win32-arm64-msvc/-/binding-win32-arm64-msvc-1.0.1.tgz",
+      "integrity": "sha512-1D+UqZdfnuR+Jy1GgMJwi85bD40H21uNmOPRWQhw4oRSuolZ/B5rixZ45DK2KXOTCvmVCecauWgEhbw8bI7tOw==",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "win32"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/binding-win32-x64-msvc": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/binding-win32-x64-msvc/-/binding-win32-x64-msvc-1.0.1.tgz",
+      "integrity": "sha512-INAycaWuhlOK3wk4mRHGsdgwYWmd9cChdPdE9bwWmy6rn9VqVNYNFGhOdXrofXUxwHIncSiPNb8tNm8knDVIeQ==",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "win32"
+      ],
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    },
+    "node_modules/@rolldown/pluginutils": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.1.tgz",
+      "integrity": "sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/@tybys/wasm-util": {
+      "version": "0.10.2",
+      "resolved": "https://registry.npmjs.org/@tybys/wasm-util/-/wasm-util-0.10.2.tgz",
+      "integrity": "sha512-RoBvJ2X0wuKlWFIjrwffGw1IqZHKQqzIchKaadZZfnNpsAYp2mM0h36JtPCjNDAHGgYez/15uMBpfGwchhiMgg==",
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+      "dependencies": {
+        "tslib": "^2.4.0"
+      }
+    },
+    "node_modules/detect-libc": {
+      "version": "2.1.2",
+      "resolved": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz",
+      "integrity": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==",
+      "dev": true,
+      "license": "Apache-2.0",
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/fdir": {
+      "version": "6.5.0",
+      "resolved": "https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz",
+      "integrity": "sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=12.0.0"
+      },
+      "peerDependencies": {
+        "picomatch": "^3 || ^4"
+      },
+      "peerDependenciesMeta": {
+        "picomatch": {
+          "optional": true
+        }
+      }
+    },
+    "node_modules/fsevents": {
+      "version": "2.3.3",
+      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz",
+      "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==",
+      "dev": true,
+      "hasInstallScript": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "darwin"
+      ],
+      "engines": {
+        "node": "^8.16.0 || ^10.6.0 || >=11.0.0"
+      }
+    },
+    "node_modules/lightningcss": {
+      "version": "1.32.0",
+      "resolved": "https://registry.npmjs.org/lightningcss/-/lightningcss-1.32.0.tgz",
+      "integrity": "sha512-NXYBzinNrblfraPGyrbPoD19C1h9lfI/1mzgWYvXUTe414Gz/X1FD2XBZSZM7rRTrMA8JL3OtAaGifrIKhQ5yQ==",
+      "dev": true,
+      "license": "MPL-2.0",
+      "dependencies": {
+        "detect-libc": "^2.0.3"
+      },
+      "engines": {
+        "node": ">= 12.0.0"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/parcel"
+      },
+      "optionalDependencies": {
+        "lightningcss-android-arm64": "1.32.0",
+        "lightningcss-darwin-arm64": "1.32.0",
+        "lightningcss-darwin-x64": "1.32.0",
+        "lightningcss-freebsd-x64": "1.32.0",
+        "lightningcss-linux-arm-gnueabihf": "1.32.0",
+        "lightningcss-linux-arm64-gnu": "1.32.0",
+        "lightningcss-linux-arm64-musl": "1.32.0",
+        "lightningcss-linux-x64-gnu": "1.32.0",
+        "lightningcss-linux-x64-musl": "1.32.0",
+        "lightningcss-win32-arm64-msvc": "1.32.0",
+        "lightningcss-win32-x64-msvc": "1.32.0"
+      }
+    },
+    "node_modules/lightningcss-android-arm64": {
+      "version": "1.32.0",
+      "resolved": "https://registry.npmjs.org/lightningcss-android-arm64/-/lightningcss-android-arm64-1.32.0.tgz",
+      "integrity": "sha512-YK7/ClTt4kAK0vo6w3X+Pnm0D2cf2vPHbhOXdoNti1Ga0al1P4TBZhwjATvjNwLEBCnKvjJc2jQgHXH0NEwlAg==",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "MPL-2.0",
+      "optional": true,
+      "os": [
+        "android"
+      ],
+      "engines": {
+        "node": ">= 12.0.0"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/parcel"
+      }
+    },
+    "node_modules/lightningcss-darwin-arm64": {
+      "version": "1.32.0",
+      "resolved": "https://registry.npmjs.org/lightningcss-darwin-arm64/-/lightningcss-darwin-arm64-1.32.0.tgz",
+      "integrity": "sha512-RzeG9Ju5bag2Bv1/lwlVJvBE3q6TtXskdZLLCyfg5pt+HLz9BqlICO7LZM7VHNTTn/5PRhHFBSjk5lc4cmscPQ==",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "MPL-2.0",
+      "optional": true,
+      "os": [
+        "darwin"
+      ],
+      "engines": {
+        "node": ">= 12.0.0"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/parcel"
+      }
+    },
+    "node_modules/lightningcss-darwin-x64": {
+      "version": "1.32.0",
+      "resolved": "https://registry.npmjs.org/lightningcss-darwin-x64/-/lightningcss-darwin-x64-1.32.0.tgz",
+      "integrity": "sha512-U+QsBp2m/s2wqpUYT/6wnlagdZbtZdndSmut/NJqlCcMLTWp5muCrID+K5UJ6jqD2BFshejCYXniPDbNh73V8w==",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "MPL-2.0",
+      "optional": true,
+      "os": [
+        "darwin"
+      ],
+      "engines": {
+        "node": ">= 12.0.0"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/parcel"
+      }
+    },
+    "node_modules/lightningcss-freebsd-x64": {
+      "version": "1.32.0",
+      "resolved": "https://registry.npmjs.org/lightningcss-freebsd-x64/-/lightningcss-freebsd-x64-1.32.0.tgz",
+      "integrity": "sha512-JCTigedEksZk3tHTTthnMdVfGf61Fky8Ji2E4YjUTEQX14xiy/lTzXnu1vwiZe3bYe0q+SpsSH/CTeDXK6WHig==",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "MPL-2.0",
+      "optional": true,
+      "os": [
+        "freebsd"
+      ],
+      "engines": {
+        "node": ">= 12.0.0"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/parcel"
+      }
+    },
+    "node_modules/lightningcss-linux-arm-gnueabihf": {
+      "version": "1.32.0",
+      "resolved": "https://registry.npmjs.org/lightningcss-linux-arm-gnueabihf/-/lightningcss-linux-arm-gnueabihf-1.32.0.tgz",
+      "integrity": "sha512-x6rnnpRa2GL0zQOkt6rts3YDPzduLpWvwAF6EMhXFVZXD4tPrBkEFqzGowzCsIWsPjqSK+tyNEODUBXeeVHSkw==",
+      "cpu": [
+        "arm"
+      ],
+      "dev": true,
+      "license": "MPL-2.0",
+      "optional": true,
+      "os": [
+        "linux"
+      ],
+      "engines": {
+        "node": ">= 12.0.0"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/parcel"
+      }
+    },
+    "node_modules/lightningcss-linux-arm64-gnu": {
+      "version": "1.32.0",
+      "resolved": "https://registry.npmjs.org/lightningcss-linux-arm64-gnu/-/lightningcss-linux-arm64-gnu-1.32.0.tgz",
+      "integrity": "sha512-0nnMyoyOLRJXfbMOilaSRcLH3Jw5z9HDNGfT/gwCPgaDjnx0i8w7vBzFLFR1f6CMLKF8gVbebmkUN3fa/kQJpQ==",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "MPL-2.0",
+      "optional": true,
+      "os": [
+        "linux"
+      ],
+      "engines": {
+        "node": ">= 12.0.0"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/parcel"
+      }
+    },
+    "node_modules/lightningcss-linux-arm64-musl": {
+      "version": "1.32.0",
+      "resolved": "https://registry.npmjs.org/lightningcss-linux-arm64-musl/-/lightningcss-linux-arm64-musl-1.32.0.tgz",
+      "integrity": "sha512-UpQkoenr4UJEzgVIYpI80lDFvRmPVg6oqboNHfoH4CQIfNA+HOrZ7Mo7KZP02dC6LjghPQJeBsvXhJod/wnIBg==",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "MPL-2.0",
+      "optional": true,
+      "os": [
+        "linux"
+      ],
+      "engines": {
+        "node": ">= 12.0.0"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/parcel"
+      }
+    },
+    "node_modules/lightningcss-linux-x64-gnu": {
+      "version": "1.32.0",
+      "resolved": "https://registry.npmjs.org/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.32.0.tgz",
+      "integrity": "sha512-V7Qr52IhZmdKPVr+Vtw8o+WLsQJYCTd8loIfpDaMRWGUZfBOYEJeyJIkqGIDMZPwPx24pUMfwSxxI8phr/MbOA==",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "MPL-2.0",
+      "optional": true,
+      "os": [
+        "linux"
+      ],
+      "engines": {
+        "node": ">= 12.0.0"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/parcel"
+      }
+    },
+    "node_modules/lightningcss-linux-x64-musl": {
+      "version": "1.32.0",
+      "resolved": "https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.32.0.tgz",
+      "integrity": "sha512-bYcLp+Vb0awsiXg/80uCRezCYHNg1/l3mt0gzHnWV9XP1W5sKa5/TCdGWaR/zBM2PeF/HbsQv/j2URNOiVuxWg==",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "MPL-2.0",
+      "optional": true,
+      "os": [
+        "linux"
+      ],
+      "engines": {
+        "node": ">= 12.0.0"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/parcel"
+      }
+    },
+    "node_modules/lightningcss-win32-arm64-msvc": {
+      "version": "1.32.0",
+      "resolved": "https://registry.npmjs.org/lightningcss-win32-arm64-msvc/-/lightningcss-win32-arm64-msvc-1.32.0.tgz",
+      "integrity": "sha512-8SbC8BR40pS6baCM8sbtYDSwEVQd4JlFTOlaD3gWGHfThTcABnNDBda6eTZeqbofalIJhFx0qKzgHJmcPTnGdw==",
+      "cpu": [
+        "arm64"
+      ],
+      "dev": true,
+      "license": "MPL-2.0",
+      "optional": true,
+      "os": [
+        "win32"
+      ],
+      "engines": {
+        "node": ">= 12.0.0"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/parcel"
+      }
+    },
+    "node_modules/lightningcss-win32-x64-msvc": {
+      "version": "1.32.0",
+      "resolved": "https://registry.npmjs.org/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.32.0.tgz",
+      "integrity": "sha512-Amq9B/SoZYdDi1kFrojnoqPLxYhQ4Wo5XiL8EVJrVsB8ARoC1PWW6VGtT0WKCemjy8aC+louJnjS7U18x3b06Q==",
+      "cpu": [
+        "x64"
+      ],
+      "dev": true,
+      "license": "MPL-2.0",
+      "optional": true,
+      "os": [
+        "win32"
+      ],
+      "engines": {
+        "node": ">= 12.0.0"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/parcel"
+      }
+    },
+    "node_modules/nanoid": {
+      "version": "3.3.12",
+      "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.12.tgz",
+      "integrity": "sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ==",
+      "dev": true,
+      "funding": [
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/ai"
+        }
+      ],
+      "license": "MIT",
+      "bin": {
+        "nanoid": "bin/nanoid.cjs"
+      },
+      "engines": {
+        "node": "^10 || ^12 || ^13.7 || ^14 || >=15.0.1"
+      }
+    },
+    "node_modules/picocolors": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz",
+      "integrity": "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==",
+      "dev": true,
+      "license": "ISC"
+    },
+    "node_modules/picomatch": {
+      "version": "4.0.4",
+      "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.4.tgz",
+      "integrity": "sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==",
+      "dev": true,
+      "license": "MIT",
+      "peer": true,
+      "engines": {
+        "node": ">=12"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/jonschlinkert"
+      }
+    },
+    "node_modules/postcss": {
+      "version": "8.5.14",
+      "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.14.tgz",
+      "integrity": "sha512-SoSL4+OSEtR99LHFZQiJLkT59C5B1amGO1NzTwj7TT1qCUgUO6hxOvzkOYxD+vMrXBM3XJIKzokoERdqQq/Zmg==",
+      "dev": true,
+      "funding": [
+        {
+          "type": "opencollective",
+          "url": "https://opencollective.com/postcss/"
+        },
+        {
+          "type": "tidelift",
+          "url": "https://tidelift.com/funding/github/npm/postcss"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/ai"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "nanoid": "^3.3.11",
+        "picocolors": "^1.1.1",
+        "source-map-js": "^1.2.1"
+      },
+      "engines": {
+        "node": "^10 || ^12 || >=14"
+      }
+    },
+    "node_modules/rolldown": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.0.1.tgz",
+      "integrity": "sha512-X0KQHljNnEkWNqqiz9zJrGunh1B0HgOxLXvnFpCOcadzcy5qohZ3tqMEUg00vncoRovXuK3ZqCT9KnnKzoInFQ==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "@oxc-project/types": "=0.130.0",
+        "@rolldown/pluginutils": "^1.0.0"
+      },
+      "bin": {
+        "rolldown": "bin/cli.mjs"
+      },
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "optionalDependencies": {
+        "@rolldown/binding-android-arm64": "1.0.1",
+        "@rolldown/binding-darwin-arm64": "1.0.1",
+        "@rolldown/binding-darwin-x64": "1.0.1",
+        "@rolldown/binding-freebsd-x64": "1.0.1",
+        "@rolldown/binding-linux-arm-gnueabihf": "1.0.1",
+        "@rolldown/binding-linux-arm64-gnu": "1.0.1",
+        "@rolldown/binding-linux-arm64-musl": "1.0.1",
+        "@rolldown/binding-linux-ppc64-gnu": "1.0.1",
+        "@rolldown/binding-linux-s390x-gnu": "1.0.1",
+        "@rolldown/binding-linux-x64-gnu": "1.0.1",
+        "@rolldown/binding-linux-x64-musl": "1.0.1",
+        "@rolldown/binding-openharmony-arm64": "1.0.1",
+        "@rolldown/binding-wasm32-wasi": "1.0.1",
+        "@rolldown/binding-win32-arm64-msvc": "1.0.1",
+        "@rolldown/binding-win32-x64-msvc": "1.0.1"
+      }
+    },
+    "node_modules/source-map-js": {
+      "version": "1.2.1",
+      "resolved": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz",
+      "integrity": "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==",
+      "dev": true,
+      "license": "BSD-3-Clause",
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/tinyglobby": {
+      "version": "0.2.16",
+      "resolved": "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.16.tgz",
+      "integrity": "sha512-pn99VhoACYR8nFHhxqix+uvsbXineAasWm5ojXoN8xEwK5Kd3/TrhNn1wByuD52UxWRLy8pu+kRMniEi6Eq9Zg==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "fdir": "^6.5.0",
+        "picomatch": "^4.0.4"
+      },
+      "engines": {
+        "node": ">=12.0.0"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/SuperchupuDev"
+      }
+    },
+    "node_modules/tslib": {
+      "version": "2.8.1",
+      "resolved": "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz",
+      "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==",
+      "dev": true,
+      "license": "0BSD",
+      "optional": true
+    },
+    "node_modules/typescript": {
+      "version": "6.0.3",
+      "resolved": "https://registry.npmjs.org/typescript/-/typescript-6.0.3.tgz",
+      "integrity": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
+      "dev": true,
+      "license": "Apache-2.0",
+      "bin": {
+        "tsc": "bin/tsc",
+        "tsserver": "bin/tsserver"
+      },
+      "engines": {
+        "node": ">=14.17"
+      }
+    },
+    "node_modules/vite": {
+      "version": "8.0.13",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.0.13.tgz",
+      "integrity": "sha512-MFtjBYgzmSxmgA4RAfjIyXWpGe1oALnjgUTzzV7QLx/TKxCzjtMH6Fd9/eVK+5Fg1qNoz5VAwsmMs/NofrmJvw==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "lightningcss": "^1.32.0",
+        "picomatch": "^4.0.4",
+        "postcss": "^8.5.14",
+        "rolldown": "1.0.1",
+        "tinyglobby": "^0.2.16"
+      },
+      "bin": {
+        "vite": "bin/vite.js"
+      },
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "funding": {
+        "url": "https://github.com/vitejs/vite?sponsor=1"
+      },
+      "optionalDependencies": {
+        "fsevents": "~2.3.3"
+      },
+      "peerDependencies": {
+        "@types/node": "^20.19.0 || >=22.12.0",
+        "@vitejs/devtools": "^0.1.18",
+        "esbuild": "^0.27.0 || ^0.28.0",
+        "jiti": ">=1.21.0",
+        "less": "^4.0.0",
+        "sass": "^1.70.0",
+        "sass-embedded": "^1.70.0",
+        "stylus": ">=0.54.8",
+        "sugarss": "^5.0.0",
+        "terser": "^5.16.0",
+        "tsx": "^4.8.1",
+        "yaml": "^2.4.2"
+      },
+      "peerDependenciesMeta": {
+        "@types/node": {
+          "optional": true
+        },
+        "@vitejs/devtools": {
+          "optional": true
+        },
+        "esbuild": {
+          "optional": true
+        },
+        "jiti": {
+          "optional": true
+        },
+        "less": {
+          "optional": true
+        },
+        "sass": {
+          "optional": true
+        },
+        "sass-embedded": {
+          "optional": true
+        },
+        "stylus": {
+          "optional": true
+        },
+        "sugarss": {
+          "optional": true
+        },
+        "terser": {
+          "optional": true
+        },
+        "tsx": {
+          "optional": true
+        },
+        "yaml": {
+          "optional": true
+        }
+      }
+    }
+  }
+}
+
+
+=====================================================================
+📁 ./package.json
+=====================================================================
+
+{
+  "name": "renaisse-landing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vite": "^5.2.0"
+  }
+}
+
+=====================================================================
+📁 ./src/components/atoms/Button.ts
+=====================================================================
+
+
+
+=====================================================================
+📁 ./src/components/atoms/Fab.ts
+=====================================================================
+
+import { qs, injectStyles } from '../../core/dom';
+import { renaisseData } from '../../data/renaisse';
+import { waURL } from '../../core/whatsapp';
+
+const css = `
+  #fab {
+    position: fixed;
+    bottom: var(--sp-xl);
+    right: var(--sp-xl);
+    z-index: var(--z-fab);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    color: var(--c-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+    
+    /* Estado inicial: Oculto y un poco más pequeño */
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+    pointer-events: none; /* Evita clics accidentales cuando está invisible */
+    
+    /* Transición suave para aparecer y para el hover */
+    transition: transform 0.4s var(--ease-out-expo), 
+                opacity 0.4s var(--ease-out-expo),
+                box-shadow var(--dur-med);
+  }
+
+  /* Clase que se añade cuando el botón del Hero ya no se ve */
+  #fab.is-visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
+  }
+
+  #fab svg { width: 28px; height: 28px; }
+  #fab.is-visible:hover { 
+    box-shadow: 0 10px 36px rgba(37,211,102,0.6); 
+    transform: scale(1.05) translateY(0);
+  }
+  
+  .fab-pulse { animation: pulse-glow 2.5s ease-in-out infinite; }
+ 
+  @media (min-width: 520px) {
+    #fab {
+      right: calc(50% - 430px / 2 + var(--sp-xl));
+    }
+  }
+`;
+
+export const renderFab = (): string => {
+  injectStyles('fab', css);
+  const waLink = waURL(renaisseData.brand.whatsappNumber, renaisseData.brand.whatsappMessage);
+
+  return `
+    <a id="fab" href="${waLink}" class="fab-pulse" target="_blank" rel="noopener noreferrer" aria-label="Agendar por WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.113.548 4.1 1.504 5.833L0 24l6.335-1.654A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.358-.213-3.76.983 1.005-3.655-.234-.375A9.818 9.818 0 0112 2.182c5.428 0 9.818 4.39 9.818 9.818s-4.39 9.818-9.818 9.818z"/>
+      </svg>
+    </a>
+  `;
+};
+
+export const initFab = () => {
+  const fab = qs<HTMLElement>('#fab');
+  const heroCta = qs<HTMLElement>('#hero-cta'); // Buscamos el botón del Hero
+
+  if (!fab) return;
+
+  // 1. Lógica de visibilidad (Aparece cuando el botón principal desaparece)
+  if (heroCta) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const heroButtonEntry = entries[0];
+        // Si el botón del hero NO se está intersectando con la pantalla (salió de la vista)
+        if (!heroButtonEntry.isIntersecting) {
+          fab.classList.add('is-visible');
+        } else {
+          // Si el botón del hero vuelve a aparecer, ocultamos el FAB
+          fab.classList.remove('is-visible');
+        }
+      },
+      {
+        root: null, // Usa el viewport del navegador
+        threshold: 0, // Se activa tan pronto como 1 píxel del botón entra o sale
+      }
+    );
+    observer.observe(heroCta);
+  } else {
+    // Fallback: Si por alguna razón no hay botón hero, mostramos el fab siempre
+    fab.classList.add('is-visible');
+  }
+
+  // 2. Lógica del efecto magnético original (se mantiene)
+  const RADIUS = 80;
+  document.addEventListener('mousemove', e => {
+    // Solo aplicamos el efecto magnético si el FAB está visible
+    if (!fab.classList.contains('is-visible')) return;
+
+    const rect = fab.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const dx = e.clientX - cx;
+    const dy = e.clientY - cy;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (dist < RADIUS) {
+      const force = (RADIUS - dist) / RADIUS;
+      const mx = dx * force * 0.35;
+      const my = dy * force * 0.35;
+      fab.style.transform = `translate(${mx}px, ${my}px) scale(${1 + force * 0.08})`;
+      fab.style.boxShadow = `0 ${10 + force * 10}px ${30 + force * 20}px rgba(37,211,102,${0.45 + force * 0.3})`;
+    } else {
+      fab.style.transform = '';
+      fab.style.boxShadow = '';
+    }
+  });
+
+  fab.addEventListener('click', () => {
+    fab.style.animation = 'gooey-burst 0.4s var(--ease-snap) forwards';
+    setTimeout(() => { fab.style.animation = ''; }, 400);
+  });
+};
+
+=====================================================================
+📁 ./src/components/atoms/SectionLabel.ts
+=====================================================================
+
+import { injectStyles } from '../../core/dom';
+
+const css = `
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-sm);
+    margin-bottom: var(--sp-2xl);
+  }
+  .section-label__num {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    color: var(--c-gold);
+    opacity: 0.6;
+  }
+  .section-label__line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--c-gold-20), transparent);
+  }
+  .section-label__text {
+    font-family: var(--font-sans);
+    font-size: var(--text-2xs);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+`;
+
+export const renderSectionLabel = (num: string, text: string): string => {
+    injectStyles('section-label', css);
+    return `
+    <div class="section-label reveal">
+      <span class="section-label__num">${num}</span>
+      <span class="section-label__line"></span>
+      <span class="section-label__text">${text}</span>
+    </div>
+  `;
+};
+
+=====================================================================
+📁 ./src/components/molecules/AccordionItem.ts
+=====================================================================
+
+import { injectStyles } from '../../core/dom';
+
+const css = `
+  .accordion-item {
+    border-bottom: 1px solid rgba(232,190,88,0.2);
+  }
+  .accordion-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--sp-lg) 0;
+    text-align: left;
+    cursor: pointer;
+    transition: color var(--dur-fast);
+  }
+  .accordion-trigger:hover .acc-title { color: var(--c-gold); }
+  
+  .acc-title {
+    font-family: var(--font-sans);
+    font-size: var(--text-md);
+    font-weight: 400; /* Look limpio sin negritas */
+    color: var(--c-white);
+    transition: color var(--dur-fast);
+  }
+  
+  .acc-icon {
+    flex-shrink: 0;
+    width: 20px; height: 20px;
+    position: relative;
+    transition: transform var(--dur-med) var(--ease-out-expo);
+  }
+  .acc-icon::before,
+  .acc-icon::after {
+    content: '';
+    position: absolute;
+    background: var(--c-gold);
+    border-radius: 2px;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    transition: transform var(--dur-med) var(--ease-out-expo),
+                opacity var(--dur-med);
+  }
+  .acc-icon::before { width: 12px; height: 1.5px; }
+  .acc-icon::after  { width: 1.5px; height: 12px; }
+  
+  .accordion-item.is-open .acc-icon::after { opacity: 0; transform: translate(-50%,-50%) rotate(90deg); }
+  
+  /* Contenedor principal: maneja solo la altura */
+  .accordion-body {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s var(--ease-out-expo);
+  }
+  .accordion-item.is-open .accordion-body { 
+    max-height: 400px; 
+  } 
+  
+  .accordion-body-inner {
+    padding-bottom: var(--sp-lg);
+  }
+  
+  .accordion-body p {
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    color: rgba(255,255,255,0.75);
+  }
+  
+  /* Animación del texto interior más ligera (evita el bloqueo del navegador) */
+  .accordion-body-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s var(--ease-out-expo);
+  }
+  
+  .accordion-item.is-open .accordion-body-line {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 100ms; /* Espera un instante a que el contenedor empiece a abrirse */
+  }
+`;
+
+export const renderAccordionItem = (tc: any, i: number): string => {
+  injectStyles('accordion-item', css);
+  return `
+    <div class="accordion-item" data-index="${i}">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="acc-title">${tc.title}</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="accordion-body" role="region">
+        <div class="accordion-body-inner">
+          <p class="accordion-body-line">${tc.body}</p>
+        </div>
+      </div>
+    </div>
+  `;
+};
+
+=====================================================================
+📁 ./src/components/molecules/BridalCard.ts
+=====================================================================
+
+import { injectStyles } from '../../core/dom';
+
+const css = `
+  .bridal-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(232,190,88,0.06) 0%, rgba(7,3,64,0.4) 100%);
+    border: 1px solid rgba(232,190,88,0.2);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-xl);
+    overflow: hidden;
+    transition: transform var(--dur-med) var(--ease-out-expo),
+                box-shadow var(--dur-med) var(--ease-out-expo);
+  }
+  .bridal-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card), var(--shadow-gold);
+  }
+  .bridal-card::after {
+    content: '♦';
+    position: absolute;
+    bottom: var(--sp-md);
+    right: var(--sp-lg);
+    font-size: 4rem;
+    color: var(--c-gold);
+    opacity: 0.06;
+    font-family: var(--font-serif);
+  }
+  .bridal-card__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--c-gold);
+    margin-bottom: var(--sp-md);
+  }
+  .bridal-card__desc {
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: var(--sp-xl);
+  }
+  .bridal-price {
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--c-white);
+  }
+  .bridal-price span { font-size: var(--text-md); font-family: var(--font-sans); opacity: 0.5; }
+`;
+
+export const renderBridalCard = (b: any): string => {
+    injectStyles('bridal-card', css);
+    return `
+    <article class="bridal-card reveal">
+      <h3 class="bridal-card__title">${b.title}</h3>
+      <p class="bridal-card__desc">${b.description}</p>
+      <div class="bridal-price"><span>S/</span>${b.price}</div>
+    </article>
+  `;
+};
+
+=====================================================================
+📁 ./src/components/molecules/PackageCard.ts
+=====================================================================
+
+import { injectStyles } from '../../core/dom';
+
+const css = `
+  .package-card {
+    border-radius: var(--radius-lg);
+    padding: var(--sp-xl);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: transform var(--dur-med) var(--ease-out-expo),
+                box-shadow var(--dur-med) var(--ease-out-expo);
+  }
+  .package-card:hover {
+    transform: translateY(-6px);
+  }
+  .package-card--normal {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.08);
+  }
+  .package-card--normal:hover { box-shadow: var(--shadow-card); }
+  
+  .package-card--highlight {
+    background: var(--c-dark);
+    border-color: var(--c-gold);
+    box-shadow: var(--shadow-gold);
+  }
+  .package-card--highlight:hover { box-shadow: var(--shadow-card), var(--shadow-gold); }
+  
+  .package-card--highlight::before {
+    content: 'Recomendado';
+    position: absolute;
+    top: 0; right: var(--sp-xl);
+    font-size: var(--text-2xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--c-dark);
+    background: var(--c-gold);
+    padding: 3px var(--sp-sm);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  }
+  .package-card__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    margin-bottom: var(--sp-xs);
+  }
+  .package-card--highlight .package-card__title { color: var(--c-gold); }
+  .package-card__tagline {
+    font-size: var(--text-xs);
+    color: rgba(255,255,255,0.5);
+    font-style: italic;
+    margin-bottom: var(--sp-sm);
+  }
+  .package-card__desc {
+    font-size: var(--text-sm);
+    line-height: 1.65;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: var(--sp-lg);
+  }
+  .package-card__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--sp-sm);
+  }
+  .package-price {
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--c-gold);
+    line-height: 1;
+  }
+  .package-price span { font-size: var(--text-md); font-family: var(--font-sans); opacity: 0.6; }
+  .package-savings {
+    font-size: var(--text-2xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--c-white);
+    background: rgba(232,190,88,0.15);
+    border: 1px solid rgba(232,190,88,0.3);
+    padding: 3px var(--sp-xs);
+    border-radius: var(--radius-full);
+  }
+`;
+
+export const renderPackageCard = (p: any): string => {
+    injectStyles('package-card', css);
+    const modifier = p.highlight ? 'package-card--highlight' : 'package-card--normal';
+
+    return `
+    <article class="package-card ${modifier} reveal">
+      <h3 class="package-card__title">${p.title}</h3>
+      <p class="package-card__tagline">${p.tagline}</p>
+      <p class="package-card__desc">${p.description}</p>
+      <div class="package-card__bottom">
+        <div class="package-price"><span>S/</span>${p.price}</div>
+        <span class="package-savings">${p.savings}</span>
+      </div>
+    </article>
+  `;
+};
+
+=====================================================================
+📁 ./src/components/molecules/ServiceCard.ts
+=====================================================================
+
+import { injectStyles } from '../../core/dom';
+
+const css = `
+  .service-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(232,190,88,0.12);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-xl);
+    position: relative;
+    overflow: hidden;
+    transition: border-color var(--dur-med),
+                background var(--dur-med),
+                transform var(--dur-med) var(--ease-out-expo),
+                box-shadow var(--dur-med) var(--ease-out-expo);
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--c-gold-08), transparent 60%);
+    opacity: 0;
+    transition: opacity var(--dur-med);
+  }
+  .service-card:hover { 
+    border-color: rgba(232,190,88,0.4); 
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card), var(--shadow-gold);
+  }
+  .service-card:hover::before { opacity: 1; }
+  .service-card__tag {
+    position: absolute;
+    top: var(--sp-md);
+    right: var(--sp-md);
+    font-size: var(--text-2xs);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c-dark);
+    background: var(--c-gold);
+    padding: 2px var(--sp-xs);
+    border-radius: var(--radius-full);
+    font-weight: 700;
+  }
+  .service-card__category {
+    font-size: var(--text-2xs);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--c-gold);
+    opacity: 0.8;
+    margin-bottom: var(--sp-xs);
+  }
+  .service-card__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: var(--sp-xs);
+  }
+  .service-card__tagline {
+    font-size: var(--text-xs);
+    color: rgba(255,255,255,0.5);
+    margin-bottom: var(--sp-md);
+    font-style: italic;
+  }
+  .service-card__desc {
+    font-size: var(--text-sm);
+    line-height: 1.65;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: var(--sp-lg);
+  }
+  .service-card__prices {
+    display: flex;
+    gap: var(--sp-md);
+    flex-wrap: wrap;
+  }
+  .price-pill {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .price-pill__label {
+    font-size: var(--text-2xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+  .price-pill__value {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--c-gold);
+  }
+  .price-pill__value span {
+    font-size: var(--text-sm);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    opacity: 0.6;
+  }
+`;
+
+export const renderServiceCard = (s: any): string => {
+    injectStyles('service-card', css);
+
+    const priceHTML = 'base' in s.prices
+        ? `<div class="price-pill">
+        <span class="price-pill__label">Desde</span>
+        <span class="price-pill__value"><span>S/</span>${s.prices.base}</span>
+      </div>`
+        : `
+      <div class="price-pill">
+        <span class="price-pill__label">Domicilio</span>
+        <span class="price-pill__value"><span>S/</span>${s.prices.domicilio}</span>
+      </div>
+      <div class="price-pill">
+        <span class="price-pill__label">Estudio</span>
+        <span class="price-pill__value"><span>S/</span>${s.prices.estudio}</span>
+      </div>`;
+
+    return `
+    <article class="service-card reveal">
+      ${s.tag ? `<span class="service-card__tag">${s.tag}</span>` : ''}
+      <p class="service-card__category">${s.category}</p>
+      <h3 class="service-card__title">${s.title}</h3>
+      <p class="service-card__tagline">${s.tagline}</p>
+      <p class="service-card__desc">${s.description}</p>
+      <div class="service-card__prices">${priceHTML}</div>
+    </article>
+  `;
+};
+
+=====================================================================
+📁 ./src/components/molecules/SlideItem.ts
+=====================================================================
+
+import { injectStyles } from '../../core/dom';
+
+const css = `
+  .slide-item {
+    flex-shrink: 0;
+    width: min(80vw, 320px);
+    height: 440px;
+    overflow: hidden; 
+    position: relative;
+    background: var(--c-dark);
+    border-radius: 0;
+  }
+
+  .slide-item__inner {
+    width: 120%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -10%; 
+    will-change: transform;
+  }
+
+  .slide-item__inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    
+    /* ESTADO BASE: Oscurecido */
+    filter: brightness(0.35) contrast(0.9);
+    transition: filter 0.6s var(--ease-out-expo);
+    display: block;
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  /* ESTADO ENFOCADO: Se ilumina la tarjeta central */
+  .slide-item.is-focused .slide-item__inner img {
+    filter: brightness(1) contrast(1.05);
+  }
+
+  .slide-item__meta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--sp-2xl) var(--sp-lg) var(--sp-lg);
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+    pointer-events: none; 
+    
+    opacity: 0.4;
+    transition: opacity 0.6s var(--ease-out-expo);
+  }
+
+  .slide-item.is-focused .slide-item__meta {
+    opacity: 1;
+  }
+
+  .slide-item__label {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--c-white);
+    line-height: 1.1;
+  }
+
+  .slide-item__year {
+    font-family: var(--font-sans);
+    font-size: var(--text-2xs);
+    letter-spacing: 0.2em;
+    color: var(--c-gold);
+    text-transform: uppercase;
+    margin-top: var(--sp-2xs);
+  }
+`;
+
+export const renderSlideItem = (item: any, i: number): string => {
+  injectStyles('slide-item', css);
+  // CORRECCIÓN: Se eliminó la clase 'reveal' para evitar que el contenedor recorte las tarjetas
+  return `
+    <div class="slide-item" data-index="${i}">
+      <div class="slide-item__inner" data-parallax="true">
+        <img src="${item.image}" alt="${item.label}" loading="lazy" draggable="false" />
+      </div>
+      <div class="slide-item__meta">
+        <p class="slide-item__label">${item.label}</p>
+        <p class="slide-item__year">${item.year}</p>
+      </div>
+    </div>
+  `;
+};
+
+=====================================================================
+📁 ./src/components/organisms/BridalGrid.ts
+=====================================================================
+
+import { injectStyles } from '../../core/dom';
+import { renderSectionLabel } from '../atoms/SectionLabel';
+import { renderBridalCard } from '../molecules/BridalCard';
+import { renaisseData } from '../../data/renaisse';
+
+const css = `
+  .bridal-grid { display: flex; flex-direction: column; gap: var(--sp-md); }
+`;
+
+export const renderBridalGrid = (): string => {
+    injectStyles('bridal-grid', css);
+    const cards = renaisseData.bridal.map(renderBridalCard).join('');
+
+    return `
+    <section class="section" aria-label="Novias">
+      ${renderSectionLabel('03', 'Novias')}
+      <h2 class="section-title reveal">Tu día <em>perfecto</em></h2>
+      <div class="bridal-grid" id="bridal-grid">
+        ${cards}
+      </div>
+    </section>
+  `;
+};
+
+=====================================================================
+📁 ./src/components/organisms/Footer.ts
+=====================================================================
+
+import { injectStyles } from '../../core/dom';
+import { renaisseData } from '../../data/renaisse';
+import { waURL } from '../../core/whatsapp';
+
+const css = `
+  /* * ESTRUCTURA PARALLAX 
+   * El contenedor envuelve el CTA (que fluye normal) y el Footer (que se queda pegado al fondo) 
+   */
+  .footer-parallax-wrapper {
+    position: relative;
+    z-index: 1;
+    /* Se asegura de estar sobre el contenido anterior */
+  }
+
+  /* ── CTA Section (Azul Marino) ── */
+  #footer-cta {
+    background: var(--c-dark);
+    padding: var(--sp-5xl) var(--sp-lg);
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Debe estar por ENCIMA del footer dorado */
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5); /* Sombra para dar profundidad al deslizar */
+  }
+
+  #footer-cta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 40px; height: 2px;
+    background: var(--c-gold);
+    border-radius: 2px;
+  }
+
+  .footer-cta-tagline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: var(--text-xl);
+    color: rgba(255,255,255,0.7);
+    margin-bottom: var(--sp-2xl);
+    letter-spacing: 0.01em;
+  }
+
+  .footer-cta-btn {
+    display: inline-block;
+    background: var(--c-gold);
+    color: var(--c-dark);
+    font-family: var(--font-sans);
+    font-size: var(--text-2xs);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 20px 40px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    transition: transform var(--dur-med) var(--ease-out-expo), box-shadow var(--dur-med);
+  }
+
+  .footer-cta-btn:hover { 
+    transform: translateY(-4px); 
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* ── Footer principal (Dorado) ── */
+  /* La magia del parallax está en 'sticky' y 'bottom: 0' */
+  #footer {
+    background: var(--c-gold);
+    padding: var(--sp-3xl) var(--sp-lg) var(--sp-xl);
+    position: sticky;
+    bottom: 0;
+    z-index: 0; /* Por DEBAJO del CTA */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+  }
+
+  /* Nombre en background — efecto editorial Awwwards */
+  .footer-bg-name {
+    position: absolute;
+    bottom: -0.1em; /* Ligeramente recortado abajo */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-serif);
+    font-size: clamp(6rem, 25vw, 10rem); /* Gigante y responsivo */
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(7,3,64,0.06); /* Apenas visible, súper sutil */
+    letter-spacing: -0.04em;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+    z-index: 0;
+  }
+
+  .footer-inner {
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-logo-block { margin-bottom: var(--sp-3xl); text-align: left; }
+  
+  .footer-logo {
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--c-dark);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--sp-xs);
+  }
+
+  .footer-slogan {
+    font-family: var(--font-sans);
+    font-size: var(--text-2xs);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(7,3,64,0.6);
+  }
+
+  /* Nav links tipo lista editorial con flecha ↗ */
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: var(--sp-3xl);
+  }
+
+  .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(7,3,64,0.12);
+    position: relative;
+    overflow: hidden;
+    color: rgba(7,3,64,0.85);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: color var(--dur-fast);
+  }
+
+  .footer-link:first-child { border-top: 1px solid rgba(7,3,64,0.12); }
+  
+  /* Animación de fondo al pasar el cursor */
+  .footer-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(7,3,64,0.05);
+    transform: translateX(-100%);
+    transition: transform var(--dur-med) var(--ease-out-expo);
+    z-index: -1;
+  }
+
+  .footer-link:hover { color: var(--c-dark); }
+  .footer-link:hover::before { transform: translateX(0); }
+
+  .footer-link-arrow {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(7,3,64,0.4);
+    transition: transform var(--dur-med) var(--ease-out-expo), color var(--dur-fast);
+  }
+
+  .footer-link:hover .footer-link-arrow {
+    transform: translate(3px, -3px);
+    color: var(--c-dark);
+  }
+
+  /* Textos inferiores */
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-sm);
+    margin-top: auto;
+    text-align: center;
+  }
+
+  .footer-copy {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(7,3,64,0.5);
+  }
+
+  .footer-credit {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(7,3,64,0.35);
+  }
+
+  .footer-credit span {
+    font-weight: 700;
+    color: var(--c-dark);
+  }
+`;
+
+export const renderFooter = (): string => {
+  injectStyles('footer', css);
+  const { brand } = renaisseData;
+  const waLink = waURL(brand.whatsappNumber, brand.whatsappMessage);
+  const year = new Date().getFullYear();
+  const links = [
+    { label: 'Instagram', href: brand.instagram },
+    { label: 'TikTok', href: brand.tiktok },
+    { label: 'Email', href: `mailto:${brand.email}` },
+  ];
+
+  const linksHTML = links.map(l => `
+      <a class="footer-link" href="${l.href}" target="_blank" rel="noopener noreferrer">
+        <span>${l.label}</span>
+        <span class="footer-link-arrow">↗</span>
+      </a>
+    `).join('');
+
+  return `
+    <div class="footer-parallax-wrapper">
+      <section id="footer-cta">
+        <p class="footer-cta-tagline">¿Lista para brillar?</p>
+        <a class="footer-cta-btn" href="${waLink}" target="_blank" rel="noopener noreferrer">Agendar mi cita ahora</a>
+      </section>
+
+      <footer id="footer" aria-label="Footer">
+        <div class="footer-bg-name" aria-hidden="true">${brand.name.replace('!', '')}</div>
+        
+        <div class="footer-inner">
+          <div class="footer-logo-block">
+            <div class="footer-logo">${brand.name}</div>
+            <p class="footer-slogan">${brand.slogan}</p>
+          </div>
+          
+          <nav class="footer-links" aria-label="Social links">
+            ${linksHTML}
+          </nav>
+          
+          <div class="footer-bottom">
+            <p class="footer-copy">© ${year} ${brand.name.replace('!', '')} — Todos los derechos reservados.</p>
+            <p class="footer-credit">Digital Experience by <span>Astostudios</span></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  `;
+};
+
+=====================================================================
+📁 ./src/components/organisms/Hero.ts
+=====================================================================
+
+import { injectStyles } from '../../core/dom';
+import { renaisseData } from '../../data/renaisse';
+import { waURL } from '../../core/whatsapp';
+
+const css = `
+  #hero {
+    position: relative; 
+    height: 100svh; 
+    min-height: 600px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-end; 
+    padding: 0 var(--sp-xl) var(--sp-2xl); 
+    overflow: hidden;
+  }
+
+  @media (min-width: 520px) {
+    #hero {
+      height: 800px; 
+      min-height: 800px;
+    }
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: var(--c-dark); /* Fondo base azul marino */
+  }
+  .hero-bg img {
+    width: 100%; height: 100%; 
+    object-fit: cover; 
+    object-position: center 30%; 
+    filter: brightness(0.8); /* Oscurece un poquito para leer bien */
+  }
+  /* Gradiente que se funde con tu azul oscuro (--c-dark) */
+  .hero-bg::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(
+      to bottom, 
+      rgba(7,3,64,0.4) 0%, 
+      transparent 25%, 
+      transparent 55%, 
+      var(--c-dark) 100%
+    );
+  }
+
+  .hero-content { 
+    position: relative; 
+    z-index: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    width: 100%;
+    margin-bottom: var(--sp-2xl); 
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-sans); 
+    font-size: var(--text-2xs);
+    letter-spacing: 0.2em; 
+    text-transform: uppercase; 
+    color: var(--c-gold);
+    opacity: 0.85; 
+    margin-bottom: var(--sp-xs);
+  }
+
+  .hero-headline {
+    font-family: var(--font-serif); /* Regresa la tipografía Serif */
+    font-size: var(--text-4xl); 
+    font-weight: 700;
+    line-height: 0.9; 
+    letter-spacing: -0.02em; 
+    text-transform: uppercase;
+    color: var(--c-white); 
+    margin-bottom: var(--sp-sm);
+  }
+  .hero-headline em { 
+    font-style: italic; 
+    color: var(--c-gold); /* El toque dorado original */
+  }
+
+  .hero-sub {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm); 
+    color: rgba(255,255,255,0.7);
+    max-width: 90%; 
+    line-height: 1.5; 
+  }
+
+  .hero-cta-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--sp-sm);
+  }
+
+  /* Botón brutalista pero con los colores de tu marca */
+  .hero-cta {
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center;
+    background: var(--c-gold); 
+    color: var(--c-dark);
+    font-family: var(--font-sans); 
+    font-weight: 700; 
+    font-size: 0.75rem;
+    letter-spacing: 0.15em; 
+    text-transform: uppercase;
+    padding: 20px 40px; 
+    border-radius: 0; /* Rectangular editorial */
+    width: 100%;
+    max-width: 320px; 
+    transition: transform var(--dur-med), box-shadow var(--dur-med);
+    border: none;
+  }
+  
+  .hero-cta:hover { 
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold); 
+  }
+`;
+
+export const renderHero = (): string => {
+  injectStyles('hero', css);
+  const { heroPromo, brand } = renaisseData;
+  const waLink = waURL(brand.whatsappNumber, brand.whatsappMessage);
+
+  // Reconstruimos el título para que la segunda palabra vuelva a ser cursiva dorada
+  const headlineHTML = heroPromo.headline
+    .map((line, i) => `<span style="display:block">${i === 1 ? `<em>${line}</em>` : line}</span>`)
+    .join('');
+
+  // Imagen de prueba temporal
+  const placeholderImg = "https://res.cloudinary.com/dhlkqt62w/image/upload/v1779158835/9a1ce629-f71d-49eb-8716-3c028a1e4845.png";
+
+  return `
+    <section id="hero" aria-label="Hero">
+      <div class="hero-bg" id="hero-bg">
+        <img src="${placeholderImg}" alt="Renaisse — Maquillaje profesional" fetchpriority="high" id="hero-img" />
+      </div>
+      
+      <div class="hero-content">
+        <p class="hero-eyebrow reveal">40% OFF Primera Vez</p>
+        <h1 class="hero-headline reveal reveal-delay-1" id="hero-headline">${headlineHTML}</h1>
+        <p class="hero-sub reveal reveal-delay-2" id="hero-sub">${heroPromo.description}</p>
+      </div>
+
+      <div class="hero-cta-wrapper reveal reveal-delay-3">
+        <a class="hero-cta" id="hero-cta" href="${waLink}" target="_blank" rel="noopener noreferrer">
+          Agendar por WhatsApp
+        </a>
+      </div>
+    </section>
+  `;
+};
+
+// Se mantiene vacía para que no se deforme al hacer scroll
+export const initHeroShrink = () => { };
+
+=====================================================================
+📁 ./src/components/organisms/Nav.ts
+=====================================================================
+
+import { injectStyles } from '../../core/dom';
+import { renaisseData } from '../../data/renaisse';
+
+const css = `
+  #nav {
+    position: absolute; 
+    top: 0; left: 0; width: 100%;
+    z-index: var(--z-nav);
+    padding: var(--sp-2xl) var(--sp-lg);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 4px;
+    pointer-events: none; 
+  }
+  .nav-logo { 
+    pointer-events: auto;
+    font-family: var(--font-serif); /* Vuelve a tu fuente elegante */
+    font-size: var(--text-2xl); 
+    font-weight: 600; 
+    color: var(--c-gold); /* Vuelve el dorado */
+    line-height: 1;
+  }
+  .nav-sub {
+    font-family: var(--font-sans); 
+    font-size: 0.6rem; 
+    font-weight: 500;
+    letter-spacing: 0.3em; 
+    text-transform: uppercase; 
+    color: rgba(255,255,255,0.6); 
+  }
+
+  @media (min-width: 520px) {
+    #nav { padding-top: calc(var(--sp-2xl) + 12px); }
+  }
+`;
+
+export const renderNav = (): string => {
+  injectStyles('nav', css);
+  return `
+    <nav id="nav" aria-label="Navegación principal">
+      <span class="nav-logo">${renaisseData.brand.name}</span>
+      <span class="nav-sub">Maquillaje & Peinado</span>
+    </nav>
+  `;
+};
+
+=====================================================================
+📁 ./src/components/organisms/PackagesGrid.ts
+=====================================================================
+
+import { injectStyles } from '../../core/dom';
+import { renderSectionLabel } from '../atoms/SectionLabel';
+import { renderPackageCard } from '../molecules/PackageCard';
+import { renaisseData } from '../../data/renaisse';
+
+const css = `
+  .packages-grid { display: flex; flex-direction: column; gap: var(--sp-md); }
+`;
+
+export const renderPackagesGrid = (): string => {
+    injectStyles('packages-grid', css);
+    const cards = renaisseData.packages.map(renderPackageCard).join('');
+
+    return `
+    <section class="section" aria-label="Paquetes">
+      ${renderSectionLabel('02', 'Paquetes')}
+      <h2 class="section-title reveal">Combos <em>irresistibles</em></h2>
+      <div class="packages-grid" id="packages-grid">
+        ${cards}
+      </div>
+    </section>
+  `;
+};
+
+=====================================================================
+📁 ./src/components/organisms/PortfolioSlider.ts
+=====================================================================
+
+import { qs, qsa, injectStyles } from '../../core/dom';
+import { renderSectionLabel } from '../atoms/SectionLabel';
+import { renderSlideItem } from '../molecules/SlideItem';
+import { renaisseData } from '../../data/renaisse';
+
+const css = `
+  #portfolio { overflow: hidden; padding: var(--sp-4xl) 0; }
+
+  .portfolio-header {
+    padding: 0 var(--sp-xl);
+    max-width: var(--container);
+    margin: 0 auto var(--sp-2xl);
+  }
+
+  .portfolio-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--sp-md);
+  }
+
+  .portfolio-title-row .section-title {
+    margin-bottom: 0; 
+  }
+
+  .slider-arrows {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 6px; 
+  }
+
+  .slider-arrow {
+    width: 44px; 
+    height: 44px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 0; 
+    color: var(--c-white);
+    cursor: pointer;
+    display: grid; 
+    place-items: center;
+    transition: all var(--dur-fast);
+  }
+
+  .slider-arrow:hover {
+    border-color: var(--c-gold);
+    background: var(--c-gold);
+    color: var(--c-dark);
+  }
+
+  .slider-arrow svg { pointer-events: none; display: block; }
+
+  @media (max-width: 768px) { .slider-arrows { display: none; } }
+
+  .slider-track {
+    display: flex;
+    gap: var(--sp-md);
+    padding: 0 var(--sp-xl) var(--sp-md);
+    cursor: grab;
+    user-select: none;
+    will-change: transform;
+    
+    /* SCROLL NATIVO: Rápido y fluido */
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; 
+    
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+    position: relative; 
+  }
+
+  .slider-track::-webkit-scrollbar { display: none; }
+  .slider-track:active { cursor: grabbing; scroll-snap-type: none; }
+  .slider-track > * { scroll-snap-align: center; } 
+
+  .slider-hint {
+    text-align: center; font-size: var(--text-2xs); letter-spacing: 0.16em;
+    text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: var(--sp-md);
+  }
+
+  @media (min-width: 769px) { .slider-hint { display: none; } }
+`;
+
+export const renderPortfolioSlider = (): string => {
+  injectStyles('portfolio-slider', css);
+  const slides = renaisseData.portfolio.map((item, i) => renderSlideItem(item, i)).join('');
+
+  return `
+    <section id="portfolio" aria-label="Portafolio">
+      <div class="portfolio-header">
+        ${renderSectionLabel('04', 'Portafolio')}
+        <div class="portfolio-title-row">
+          <h2 class="section-title reveal">Nuestra <em>obra</em></h2>
+          <div class="slider-arrows reveal">
+            <button class="slider-arrow" id="slider-btn-prev" aria-label="Anterior">
+              <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+                <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"/>
+              </svg>
+            </button>
+            <button class="slider-arrow" id="slider-btn-next" aria-label="Siguiente">
+              <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+                <path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-track reveal reveal-delay-1" id="slider-track">
+        ${slides}
+      </div>
+      <p class="slider-hint reveal reveal-delay-2">← Desliza para explorar →</p>
+    </section>
+  `;
+};
+
+export const initSlider = () => {
+  const track = qs<HTMLElement>('#slider-track');
+  if (!track) return;
+
+  track.addEventListener('dragstart', e => e.preventDefault());
+  track.addEventListener('selectstart', e => e.preventDefault());
+
+  // 1. CONTROLADOR DE FOCO (Ilumina la tarjeta central)
+  const focusObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-focused');
+      } else {
+        entry.target.classList.remove('is-focused');
+      }
+    });
+  }, {
+    root: track,
+    threshold: 0.6
+  });
+
+  qsa('.slide-item', track).forEach(slide => focusObserver.observe(slide));
+
+  // 2. LÓGICA DE ARRASTRE DE ESCRITORIO
+  let isDragging = false, startX = 0, scrollLeft = 0;
+
+  track.addEventListener('mousedown', (e: MouseEvent) => {
+    isDragging = true;
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+    track.style.cursor = 'grabbing';
+    track.style.scrollSnapType = 'none';
+  });
+
+  const stopDrag = () => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.cursor = 'grab';
+    setTimeout(() => track.style.removeProperty('scroll-snap-type'), 50);
+  };
+
+  document.addEventListener('mouseup', stopDrag);
+  track.addEventListener('mouseleave', stopDrag);
+
+  track.addEventListener('mousemove', (e: MouseEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 2.5;
+    track.scrollLeft = scrollLeft - walk;
+  });
+
+  // 3. BOTONES DE NAVEGACIÓN
+  const btnPrev = qs<HTMLElement>('#slider-btn-prev');
+  const btnNext = qs<HTMLElement>('#slider-btn-next');
+
+  const scrollByCard = (direction: number) => {
+    const firstCard = track.querySelector<HTMLElement>('.slide-item');
+    if (!firstCard) return;
+
+    const gap = parseInt(getComputedStyle(track).gap) || 16;
+    const scrollAmount = (firstCard.offsetWidth + gap) * direction;
+
+    track.style.scrollSnapType = 'none';
+    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    setTimeout(() => track.style.removeProperty('scroll-snap-type'), 400);
+  };
+
+  btnPrev?.addEventListener('click', () => scrollByCard(-1));
+  btnNext?.addEventListener('click', () => scrollByCard(1));
+
+  // 4. PARALLAX OPTIMIZADO
+  function updateParallax() {
+    const trackWidth = track.clientWidth;
+    const trackCenter = track.scrollLeft + trackWidth / 2;
+
+    qsa<HTMLElement>('.slide-item', track).forEach(slide => {
+      const inner = slide.querySelector<HTMLElement>('[data-parallax="true"]');
+      if (!inner) return;
+
+      const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+      const offset = (slideCenter - trackCenter) / trackWidth;
+
+      const moveX = Math.max(-10, Math.min(10, offset * -10));
+      inner.style.transform = `translateX(${moveX}%)`;
+    });
+  }
+
+  let ticking = false;
+  track.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateParallax();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  requestAnimationFrame(updateParallax);
+};
+
+=====================================================================
+📁 ./src/components/organisms/ServicesGrid.ts
+=====================================================================
+
+import { injectStyles } from '../../core/dom';
+import { renderSectionLabel } from '../atoms/SectionLabel';
+import { renderServiceCard } from '../molecules/ServiceCard';
+import { renaisseData } from '../../data/renaisse';
+
+const css = `
+  #services-stack { padding: 0 var(--sp-lg); max-width: var(--container); margin: 0 auto var(--sp-4xl); }
+  .services-grid { display: flex; flex-direction: column; gap: var(--sp-md); }
+`;
+
+export const renderServicesGrid = (): string => {
+    injectStyles('services-grid', css);
+    const cards = renaisseData.services.map(renderServiceCard).join('');
+
+    return `
+    <section id="services-stack" aria-label="Servicios">
+      ${renderSectionLabel('01', 'Servicios')}
+      <h2 class="section-title reveal">Lo que <em>hacemos</em></h2>
+      <div class="services-grid" id="services-grid">
+        ${cards}
+      </div>
+    </section>
+  `;
+};
+
+=====================================================================
+📁 ./src/components/organisms/TermsAccordion.ts
+=====================================================================
+
+import { qs, qsa, injectStyles } from '../../core/dom';
+import { renderSectionLabel } from '../atoms/SectionLabel';
+import { renderAccordionItem } from '../molecules/AccordionItem';
+import { renaisseData } from '../../data/renaisse';
+
+const css = `
+  #terms { padding: var(--sp-4xl) var(--sp-lg); max-width: var(--container); margin: 0 auto; }
+  .accordion-list { display: flex; flex-direction: column; }
+`;
+
+export const renderTermsAccordion = (): string => {
+  injectStyles('terms-accordion', css);
+  const items = renaisseData.termsAndConditions.map((tc, i) => renderAccordionItem(tc, i)).join('');
+
+  return `
+    <section id="terms" aria-label="Términos y condiciones">
+      ${renderSectionLabel('05', 'Términos & Condiciones')}
+      <h2 class="section-title reveal">Políticas del <em>servicio</em></h2>
+      <div class="accordion-list" id="accordion-list">
+        ${items}
+      </div>
+    </section>
+  `;
+};
+
+export const initAccordion = () => {
+  const list = qs('#accordion-list');
+  if (!list) return;
+
+  list.addEventListener('click', e => {
+    const trigger = (e.target as HTMLElement).closest('.accordion-trigger');
+    if (!trigger) return;
+
+    const currentItem = trigger.closest('.accordion-item') as HTMLElement;
+    const wasOpen = currentItem.classList.contains('is-open');
+
+    // 1. Cerramos TODOS los items limpiamente
+    qsa('.accordion-item', list).forEach(item => {
+      item.classList.remove('is-open');
+      item.querySelector('.accordion-trigger')?.setAttribute('aria-expanded', 'false');
+    });
+
+    // 2. Si el item que clickeamos NO estaba abierto, lo abrimos
+    if (!wasOpen) {
+      currentItem.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+  });
+};
+
+=====================================================================
+📁 ./src/core/dom.ts
+=====================================================================
+
+export const qs = <T extends Element>(sel: string, ctx: ParentNode = document) => ctx.querySelector<T>(sel)!;
+export const qsa = <T extends Element>(sel: string, ctx: ParentNode = document) => [...ctx.querySelectorAll<T>(sel)];
+
+// Evita inyectar el mismo CSS múltiples veces si renderizamos varios componentes iguales
+const injectedStyles = new Set<string>();
+
+export const injectStyles = (id: string, css: string) => {
+    if (injectedStyles.has(id)) return;
+    const style = document.createElement('style');
+    style.id = `style-${id}`;
+    style.textContent = css;
+    document.head.appendChild(style);
+    injectedStyles.add(id);
+};
+
+=====================================================================
+📁 ./src/core/observers.ts
+=====================================================================
+
+// src/core/observers.ts
+import { qsa } from './dom';
+
+export const initRevealObserver = () => {
+    /*
+      CORRECCIÓN:
+      - Se elimina `root: scroller` porque ya no existe el div#scroller.
+      - Con root: null (o sin root), el IntersectionObserver usa el VIEWPORT,
+        que es el comportamiento estándar y el que usa Innograf.
+      - Antes, al buscar #scroller y no encontrarlo (o encontrar uno que no
+        hacía scroll real), el observer fallaba silenciosamente y nada
+        se animaba al entrar en pantalla.
+    */
+    const io = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        }
+    );
+
+    qsa('.reveal').forEach(el => io.observe(el));
+
+    // Revelar inmediatamente los primeros elementos above-the-fold
+    qsa('.reveal').slice(0, 4).forEach(el => el.classList.add('is-visible'));
+};
+
+=====================================================================
+📁 ./src/core/whatsapp.ts
+=====================================================================
+
+export function waURL(num: string, msg: string): string {
+    return `https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
+}
+
+=====================================================================
+📁 ./src/data/renaisse.ts
+=====================================================================
+
+export const renaisseData = {
+    brand: {
+        name: "Renaisse!",
+        slogan: "Realzando tu belleza natural",
+        whatsappNumber: "51922644511",
+        whatsappMessage: "Hola! Vi su landing y quiero agendar una cita 💄✨",
+        instagram: "https://instagram.com/renaisse",
+        tiktok: "https://tiktok.com/@renaisse",
+        email: "hola@renaisse.pe",
+    },
+    heroPromo: {
+        badge: "40% OFF",
+        badgeLabel: "Primera Vez",
+        headline: ["ARTE", "EN TU", "ROSTRO"],
+        sub: "Maquillaje & Peinado Profesional — Lima",
+        description: "Obtén un 40% de descuento en tu primer servicio mostrando el folleto digital al agendar.",
+        cta: "Agendar Ahora",
+        disclaimer: "*Aplica términos y condiciones.",
+    },
+    services: [
+        { id: "makeup-social", category: "Maquillaje", title: "Maquillaje Social", tagline: "Pieles de alta duración, técnicas en tendencia.", description: "Sombras de ojos profundas, técnicas de difuminado editorial, bases de alta cobertura y asesoría personalizada según tu morfología facial.", prices: { domicilio: 120, estudio: 95 }, tag: "Más popular" },
+        { id: "hair-pro", category: "Peinado", title: "Peinado Profesional", tagline: "Fijación máxima, acabado impecable.", description: "Realza y complementa tu maquillaje. Productos de fijación máxima y asesoría según tu morfología y el tipo de evento.", prices: { domicilio: 50, estudio: 50 }, tag: null },
+        { id: "hair-others", category: "Peinado", title: "Cepillados & Planchados", tagline: "Acabados rápidos y prolijos.", description: "Para cualquier ocasión. Liso espejo, ondas naturales o volumen controlado — siempre con productos de calidad profesional.", prices: { base: 39 }, tag: null },
+    ],
+    packages: [
+        { id: "pack-social", title: "Paquete Social", tagline: "El combo perfecto.", description: "Maquillaje social + peinado profesional en un solo servicio.", price: 160, savings: "Ahorra S/10", highlight: false },
+        { id: "pack-duo", title: "Paquete para 2", tagline: "¡Mejor con una amiga!", description: "2 maquillajes sociales + 2 peinados profesionales. El precio más inteligente cuando van en dupla.", price: 300, savings: "Ahorra S/20", highlight: true },
+    ],
+    bridal: [
+        { id: "bridal-civil", title: "Novia Civil", description: "Prueba de maquillaje (2 opciones de rostro + 2 peinados el mismo día) + maquillaje nupcial civil alta duración + peinado alta fijación + acompañamiento para retoques todo el día.", price: 380 },
+        { id: "bridal-religiosa", title: "Novia Religiosa", description: "Todo lo del plan Civil + asesoría y seguimiento completo del servicio. Para la novia que quiere cero preocupaciones.", price: 500 },
+    ],
+    termsAndConditions: [
+        { title: "Reserva & Abono", body: "Todo servicio se reserva con un 50% de abono adelantado. El saldo restante se cancela el mismo día del servicio por Yape o efectivo." },
+        { title: "Puntualidad", body: "Se aplicará una penalidad si la demora supera los 20 minutos. La puntualidad garantiza la calidad del resultado." },
+        { title: "Devoluciones", body: "Una vez terminado el servicio no hay lugar a devoluciones por ningún motivo. Nos comprometemos con la calidad desde el primer trazo." },
+        { title: "Servicios Adicionales", body: "El maquillaje base NO incluye pestañas postizas, parches, mascarillas ni botox instantáneo. Se consideran servicios adicionales con costo aparte." },
+        { title: "Movilidad", body: "El servicio a domicilio tiene un costo extra de movilidad de aprox. S/20 según ubicación. En el mismo distrito de la maquilladora la movilidad es gratuita." },
+    ],
+    portfolio: [
+        { id: "p1", label: "Editorial Makeup ", year: "2025", image: "https://res.cloudinary.com/dhlkqt62w/image/upload/v1779209596/ab6e9999-e140-42cc-a12f-3143cf1e1249_bavaqr.jpg" },
+        { id: "p2", label: "Social Makeup", year: "2026", image: "https://res.cloudinary.com/dhlkqt62w/image/upload/v1779209602/modelo_2_lc32el.jpg" },
+        { id: "p3", label: "Rock Just Me", year: "2026", image: "https://res.cloudinary.com/dhlkqt62w/image/upload/v1779209611/natalia3_wfkxpr.jpg" },
+        { id: "p4", label: "Social Hairstyle ", year: "2025", image: "https://res.cloudinary.com/dhlkqt62w/image/upload/v1779209617/Peinado4_u1wrii.png" },
+    ],
+};
+
+=====================================================================
+📁 ./src/design-system/animations.css
+=====================================================================
+
+/* ============================================================
+   RENAISSE! — animations.css
+   ============================================================ */
+
+/* ── Keyframes ── */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.88);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(232, 190, 88, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 12px rgba(232, 190, 88, 0);
+    }
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes badge-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-4px) scale(1.04);
+    }
+}
+
+@keyframes curtain-up {
+    from {
+        clip-path: inset(100% 0 0 0);
+    }
+
+    to {
+        clip-path: inset(0% 0 0 0);
+    }
+}
+
+@keyframes line-reveal {
+    from {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    to {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+@keyframes gooey-burst {
+    0% {
+        transform: scale(1);
+        filter: blur(0);
+    }
+
+    50% {
+        transform: scale(1.15);
+        filter: blur(2px);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+/* ── Utility classes ── */
+.anim-fade-up {
+    animation: fadeUp var(--dur-slow) var(--ease-out-expo) both;
+}
+
+.anim-fade-in {
+    animation: fadeIn var(--dur-slow) var(--ease-out-expo) both;
+}
+
+.anim-scale-in {
+    animation: scaleIn var(--dur-slow) var(--ease-out-expo) both;
+}
+
+/* ── Scroll-driven: reveal on enter ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity var(--dur-slow) var(--ease-out-expo),
+        transform var(--dur-slow) var(--ease-out-expo);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 {
+    transition-delay: 100ms;
+}
+
+.reveal-delay-2 {
+    transition-delay: 200ms;
+}
+
+.reveal-delay-3 {
+    transition-delay: 300ms;
+}
+
+.reveal-delay-4 {
+    transition-delay: 450ms;
+}
+
+/* ── Gold shimmer text ── */
+.text-shimmer {
+    background: linear-gradient(90deg,
+            var(--c-gold-dk) 0%,
+            var(--c-gold) 40%,
+            var(--c-gold-lt) 55%,
+            var(--c-gold) 70%,
+            var(--c-gold-dk) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+}
+
+/* ── Card hover lift ── */
+.card-lift {
+    transition: transform var(--dur-med) var(--ease-out-expo),
+        box-shadow var(--dur-med) var(--ease-out-expo);
+}
+
+.card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card), var(--shadow-gold);
+}
+
+/* ── Accordion line reveal ── */
+.accordion-body-line {
+    display: block;
+    overflow: hidden;
+    transform: translateY(100%);
+    transition: transform 350ms var(--ease-out-expo);
+}
+
+.accordion-item.is-open .accordion-body-line {
+    transform: translateY(0);
+}
+
+/* ── FAB pulse ── */
+.fab-pulse {
+    animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+=====================================================================
+📁 ./src/design-system/global.css
+=====================================================================
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+/* ── Reset mínimo ── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+/* ── Body: fondo elegante, centra la "app" ── */
+body {
+    min-height: 100%;
+    font-family: var(--font-sans);
+    background-color: #1a1a2e;
+    /* Fondo oscuro elegante que combina con el azul marino de Renaisse */
+
+    /* Patrón de ruido imperceptible con SVG inline */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+
+    /* Centra el #app en desktop */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    /* En mobile: sin padding */
+    padding: 0;
+
+    /* SIN overflow: hidden — el body nunca debe bloquear el scroll */
+}
+
+/* Desktop: espacio para que la tarjeta "flote" */
+@media (min-width: 520px) {
+    body {
+        padding: 48px 24px 80px;
+        align-items: center;
+        min-height: 100vh;
+    }
+}
+
+/* ── #app: el "celular flotante" ── */
+#app {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    /* En mobile: al menos toda la pantalla */
+    background: var(--c-dark);
+    color: var(--c-white);
+    position: relative;
+
+    /* En mobile: sin sombra ni radio — ocupa toda la pantalla */
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    /* SIN borde de "marco de iPhone" */
+}
+
+/* Desktop: el efecto celular flotante */
+@media (min-width: 520px) {
+    #app {
+        min-height: auto;
+        /* Deja que el contenido determine la altura */
+        border-radius: 44px;
+        /* Bordes redondeados estilo iPhone */
+
+        /*
+          SIN border de 8px oscuro — Innograf no lo tiene.
+          El border aprieta el contenido y da el efecto "grotesco".
+          La ilusión de marco se logra solo con la sombra multicapa.
+        */
+
+        /* Sombra multicapa Apple-like */
+        box-shadow:
+            0 0 0 1px rgba(0, 0, 0, .06),
+            0 8px 24px rgba(0, 0, 0, .08),
+            0 32px 80px rgba(0, 0, 0, .12),
+            0 64px 120px rgba(0, 0, 0, .08);
+
+        overflow: hidden;
+        /* clip del border-radius */
+    }
+}
+
+/* ── Utilidades globales ── */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img,
+video {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.section {
+    position: relative;
+    padding: var(--sp-4xl) var(--sp-lg);
+    margin: 0 auto;
+}
+
+.gold-divider {
+    width: 40px;
+    height: 2px;
+    background: var(--c-gold);
+    margin: 0 auto var(--sp-2xl);
+    border-radius: 2px;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: var(--sp-2xl);
+}
+
+.section-title em {
+    font-style: italic;
+    color: var(--c-gold);
+}
+
+/* Desactiva hover states en dispositivos táctiles */
+@media (hover: none) {
+    * {
+        cursor: default !important;
+    }
+}
+
+/* ── Accesibilidad ── */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+=====================================================================
+📁 ./src/design-system/tokens.css
+=====================================================================
+
+/* ============================================================
+   RENAISSE! — tokens.css
+   Design System Tokens — Brutalismo Refinado / Minimalismo Japonés
+   ============================================================ */
+
+:root {
+    /* ── Paleta ── */
+    --c-dark: #070340;
+    --c-gold: #E8BE58;
+    --c-gold-lt: #F2D07A;
+    --c-gold-dk: #B8942A;
+    --c-white: #FFFFFF;
+    --c-black: #000000;
+    --c-dark-80: rgba(7, 3, 64, 0.80);
+    --c-dark-60: rgba(7, 3, 64, 0.60);
+    --c-gold-20: rgba(232, 190, 88, 0.20);
+    --c-gold-08: rgba(232, 190, 88, 0.08);
+
+    /* ── Tipografía ── */
+    --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+    --font-sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+
+    /* ── Escala tipográfica (Fluida para Móvil) ── */
+    --text-2xs: clamp(0.625rem, 1.5vw, 0.75rem);
+    --text-xs: clamp(0.75rem, 1.8vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 2vw, 1rem);
+    --text-md: clamp(1rem, 2.2vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 2.5vw, 1.375rem);
+    --text-xl: clamp(1.375rem, 3.5vw, 1.75rem);
+    --text-2xl: clamp(1.75rem, 5vw, 2.5rem);
+    --text-3xl: clamp(2.5rem, 7vw, 4rem);
+    --text-4xl: clamp(3.5rem, 11vw, 7rem);
+    --text-hero: clamp(4.5rem, 18vw, 6rem);
+    /* Límite reducido */
+
+    /* ── Spacing ── */
+    --sp-2xs: 0.25rem;
+    --sp-xs: 0.5rem;
+    --sp-sm: 0.75rem;
+    --sp-md: 1rem;
+    --sp-lg: 1.5rem;
+    --sp-xl: 2rem;
+    --sp-2xl: 3rem;
+    --sp-3xl: 4.5rem;
+    --sp-4xl: 6rem;
+    --sp-5xl: 9rem;
+
+    /* ── Bordes ── */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* ── Sombras ── */
+    --shadow-gold: 0 0 32px rgba(232, 190, 88, 0.25);
+    --shadow-dark: 0 8px 40px rgba(7, 3, 64, 0.6);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-card: 0 12px 48px rgba(0, 0, 0, 0.35);
+
+    /* ── Transiciones ── */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --dur-fast: 200ms;
+    --dur-med: 400ms;
+    --dur-slow: 700ms;
+    --dur-xl: 1100ms;
+
+    /* ── Layout ── */
+    --container: min(100% - 2.5rem, 640px);
+    --container-wide: min(100% - 2rem, 900px);
+    --z-fab: 100;
+    --z-nav: 90;
+    --z-modal: 200;
+}
+
+/* 👇 NUEVO: Congela el tamaño del texto en Desktop para simular el móvil a la perfección */
+@media (min-width: 520px) {
+    :root {
+        --text-2xs: 0.75rem;
+        --text-xs: 0.875rem;
+        --text-sm: 1rem;
+        --text-md: 1.125rem;
+        --text-lg: 1.25rem;
+        --text-xl: 1.5rem;
+        --text-2xl: 2rem;
+        --text-3xl: 2.5rem;
+        --text-4xl: 3.5rem;
+        --text-hero: 4.5rem;
+        /* Exactamente 72px, idéntico a tu móvil */
+    }
+}
+
+=====================================================================
+📁 ./src/main.ts
+=====================================================================
+
+// src/main.ts — Renaisse (Arquitectura corregida, basada en Innograf)
+
+// ── 1. Estilos Globales (El orden importa para Vite) ──────────────────
+import './design-system/tokens.css';
+import './design-system/animations.css';
+import './design-system/global.css';
+
+// ── 2. Datos y Utilidades ─────────────────────────────────────────────
+import { qs } from './core/dom';
+import { waURL } from './core/whatsapp';
+import { renaisseData } from './data/renaisse';
+import { initRevealObserver } from './core/observers';
+
+// ── 3. Componentes ────────────────────────────────────────────────────
+// import { renderCursor, initCursor } from './components/atoms/Cursor';
+import { renderFab, initFab } from './components/atoms/Fab';
+import { renderNav } from './components/organisms/Nav';
+import { renderHero, initHeroShrink } from './components/organisms/Hero';
+import { renderServicesGrid } from './components/organisms/ServicesGrid';
+import { renderPackagesGrid } from './components/organisms/PackagesGrid';
+import { renderBridalGrid } from './components/organisms/BridalGrid';
+import { renderPortfolioSlider, initSlider } from './components/organisms/PortfolioSlider';
+import { renderTermsAccordion, initAccordion } from './components/organisms/TermsAccordion';
+import { renderFooter } from './components/organisms/Footer';
+
+// ── 4. Componente CTA Final (ELIMINADO: ahora vive dentro de Footer.ts) ──
+
+// ── 5. Construcción del DOM ───────────────────────────────────────────
+const renderApp = () => {
+  const app = document.getElementById('app');
+  if (!app) throw new Error('[Renaisse] Elemento #app no encontrado.');
+
+  app.innerHTML = `
+    ${renderNav()}
+    ${renderHero()}
+    ${renderServicesGrid()}
+    ${renderPackagesGrid()}
+    ${renderBridalGrid()}
+    ${renderPortfolioSlider()}
+    ${renderTermsAccordion()}
+    ${renderFooter()} ${renderFab()}
+  `;
+};
+
+// ── 6. Lógica de Interacciones ────────────────────────────────────────
+const initInteractions = () => {
+  // initCursor();       // Cursor custom (estaba importado pero nunca montado)
+  initHeroShrink();   // Efecto de encogimiento del hero al hacer scroll
+  initSlider();       // Drag & parallax del portafolio
+  initAccordion();    // Términos & condiciones
+  initFab();          // Efecto magnético del botón WhatsApp
+
+  // Disparamos el observer en el frame exacto de pintura
+  // para evitar race conditions (igual que Innograf)
+  requestAnimationFrame(() => {
+    initRevealObserver();
+  });
+};
+
+// ── 7. Orquestación y Control de Carga ───────────────────────────────
+const init = () => {
+  renderApp();
+
+  const startTime = Date.now();
+  const MIN_LOADER_MS = 600;
+  const heroImg = qs<HTMLImageElement>('#hero-img');
+
+  const onAppReady = () => {
+    const elapsed = Date.now() - startTime;
+    const delay = Math.max(0, MIN_LOADER_MS - elapsed);
+    setTimeout(() => {
+      initInteractions();
+    }, delay);
+  };
+
+  if (heroImg?.complete) {
+    onAppReady();
+  } else {
+    heroImg?.addEventListener('load', onAppReady, { once: true });
+    heroImg?.addEventListener('error', onAppReady, { once: true });
+    setTimeout(onAppReady, 3000); // Fallback de seguridad
+  }
+};
+
+document.readyState === 'loading'
+  ? document.addEventListener('DOMContentLoaded', init)
+  : init();
+
+=====================================================================
+📁 ./tsconfig.json
+=====================================================================
+
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "skipLibCheck": true,
+    "outDir": "dist"
+  },
+  "include": [
+    "src"
+  ]
+}
+
+=====================================================================
+📁 ./vite.config.ts
+=====================================================================
+
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+    build: {
+        outDir: 'dist',
+        assetsDir: 'assets',
+        sourcemap: false,
+        minify: 'esbuild',
+        target: 'es2020',
+    },
+});
+
