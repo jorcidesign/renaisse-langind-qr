@@ -23,7 +23,6 @@ import { renderPortfolioSlider, initSlider } from './components/organisms/Portfo
 import { renderTermsAccordion, initAccordion } from './components/organisms/TermsAccordion';
 import { renderFooter } from './components/organisms/Footer';
 
-// ── 4. Componente CTA Final (ELIMINADO: ahora vive dentro de Footer.ts) ──
 
 // ── 5. Construcción del DOM ───────────────────────────────────────────
 const renderApp = () => {
@@ -34,9 +33,9 @@ const renderApp = () => {
     ${renderNav()}
     ${renderHero()}
     ${renderServicesGrid()}
+    ${renderPortfolioSlider()}
     ${renderPackagesGrid()}
     ${renderBridalGrid()}
-    ${renderPortfolioSlider()}
     ${renderTermsAccordion()}
     ${renderFooter()} ${renderFab()}
   `;
@@ -65,7 +64,17 @@ const init = () => {
   const MIN_LOADER_MS = 600;
   const heroImg = qs<HTMLImageElement>('#hero-img');
 
+  let timeoutId: any;
+  let initialized = false;
+
   const onAppReady = () => {
+    if (initialized) return;
+    initialized = true;
+
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+
     const elapsed = Date.now() - startTime;
     const delay = Math.max(0, MIN_LOADER_MS - elapsed);
     setTimeout(() => {
@@ -78,7 +87,7 @@ const init = () => {
   } else {
     heroImg?.addEventListener('load', onAppReady, { once: true });
     heroImg?.addEventListener('error', onAppReady, { once: true });
-    setTimeout(onAppReady, 3000); // Fallback de seguridad
+    timeoutId = setTimeout(onAppReady, 3000); // Fallback de seguridad
   }
 };
 

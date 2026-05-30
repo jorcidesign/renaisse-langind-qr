@@ -52,9 +52,7 @@ const css = `
     max-height: 0;
     transition: max-height 0.4s var(--ease-out-expo);
   }
-  .accordion-item.is-open .accordion-body { 
-    max-height: 400px; 
-  } 
+  
   
   .accordion-body-inner {
     padding-bottom: var(--sp-lg);

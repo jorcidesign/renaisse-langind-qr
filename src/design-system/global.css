@@ -119,7 +119,7 @@ button {
     height: 2px;
     background: var(--c-gold);
     margin: 0 auto var(--sp-2xl);
-    border-radius: 2px;
+    border-radius: 0;
 }
 
 .section-title {

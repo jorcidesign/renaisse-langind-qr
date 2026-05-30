@@ -30,7 +30,7 @@ const css = `
     transform: translateX(-50%);
     width: 40px; height: 2px;
     background: var(--c-gold);
-    border-radius: 2px;
+    border-radius: 0;
   }
 
   .footer-cta-tagline {

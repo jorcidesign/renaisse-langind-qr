@@ -10,10 +10,9 @@ export const renaisseData = {
     },
     heroPromo: {
         badge: "40% OFF",
-        badgeLabel: "Primera Vez",
-        headline: ["ARTE", "EN TU", "ROSTRO"],
-        sub: "Maquillaje & Peinado Profesional — Lima",
-        description: "Obtén un 40% de descuento en tu primer servicio mostrando el folleto digital al agendar.",
+        badgeLabel: "En tu primera cita",
+        headline: ["TU MEJOR", "VERSIÓN", "TE ESPERA"],
+        sub: "Maquillaje & Peinado Profesional en Lima — Tu transformación comienza aquí.",
         cta: "Agendar Ahora",
         disclaimer: "*Aplica términos y condiciones.",
     },
@@ -40,7 +39,7 @@ export const renaisseData = {
     portfolio: [
         { id: "p1", label: "Editorial Makeup ", year: "2025", image: "https://res.cloudinary.com/dhlkqt62w/image/upload/v1779209596/ab6e9999-e140-42cc-a12f-3143cf1e1249_bavaqr.jpg" },
         { id: "p2", label: "Social Makeup", year: "2026", image: "https://res.cloudinary.com/dhlkqt62w/image/upload/v1779209602/modelo_2_lc32el.jpg" },
-        { id: "p3", label: "Rock Just Me", year: "2026", image: "https://res.cloudinary.com/dhlkqt62w/image/upload/v1779209611/natalia3_wfkxpr.jpg" },
+        { id: "p3", label: "Rock Just Me", year: "2026", image: "https://res.cloudinary.com/dhlkqt62w/image/upload/v1779506380/natalia5_yyeymp.jpg" },
         { id: "p4", label: "Social Hairstyle ", year: "2025", image: "https://res.cloudinary.com/dhlkqt62w/image/upload/v1779209617/Peinado4_u1wrii.png" },
     ],
 };

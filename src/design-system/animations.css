@@ -71,6 +71,16 @@
     }
 }
 
+@keyframes pulse-subtle {
+    0%, 100% { transform: scale(1); filter: brightness(1); }
+    50% { transform: scale(1.02); filter: brightness(1.1); }
+}
+
+@keyframes float-light {
+    0%, 100% { box-shadow: 0 4px 20px rgba(232, 190, 88, 0.15); }
+    50% { box-shadow: 0 8px 30px rgba(232, 190, 88, 0.3); }
+}
+
 @keyframes spin-slow {
     from {
         transform: rotate(0deg);
@@ -200,17 +210,7 @@
     box-shadow: var(--shadow-card), var(--shadow-gold);
 }
 
-/* ── Accordion line reveal ── */
-.accordion-body-line {
-    display: block;
-    overflow: hidden;
-    transform: translateY(100%);
-    transition: transform 350ms var(--ease-out-expo);
-}
 
-.accordion-item.is-open .accordion-body-line {
-    transform: translateY(0);
-}
 
 /* ── FAB pulse ── */
 .fab-pulse {

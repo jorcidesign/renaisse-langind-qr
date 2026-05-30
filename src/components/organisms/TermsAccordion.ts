@@ -34,16 +34,24 @@ export const initAccordion = () => {
     const currentItem = trigger.closest('.accordion-item') as HTMLElement;
     const wasOpen = currentItem.classList.contains('is-open');
 
-    // 1. Cerramos TODOS los items limpiamente
+    // 1. Cerramos TODOS los items limpiamente y reseteamos su altura
     qsa('.accordion-item', list).forEach(item => {
       item.classList.remove('is-open');
       item.querySelector('.accordion-trigger')?.setAttribute('aria-expanded', 'false');
+      const body = item.querySelector('.accordion-body') as HTMLElement;
+      if (body) {
+        body.style.maxHeight = '0px';
+      }
     });
 
-    // 2. Si el item que clickeamos NO estaba abierto, lo abrimos
+    // 2. Si el item que clickeamos NO estaba abierto, lo abrimos y calculamos su altura real
     if (!wasOpen) {
       currentItem.classList.add('is-open');
       trigger.setAttribute('aria-expanded', 'true');
+      const body = currentItem.querySelector('.accordion-body') as HTMLElement;
+      if (body) {
+        body.style.maxHeight = `${body.scrollHeight}px`;
+      }
     }
   });
 };
