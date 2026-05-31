@@ -1,0 +1,3 @@
+Test file created by Antigravity on native Linux Mint.
+This is a minimal change to verify local execution and Git integration in this environment.
+Date: 2026-05-31
