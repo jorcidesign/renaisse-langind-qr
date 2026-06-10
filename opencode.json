@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "command": {
+    "dev": {
+      "template": "Run the Vite dev server for local development with HMR.",
+      "description": "Start Vite dev server"
+    },
+    "build": {
+      "template": "Run TypeScript type check (tsc) and Vite production build.",
+      "description": "Build for production"
+    },
+    "generate-qrs": {
+      "template": "Generate QR code images in public/qrs/ using the generate-qrs.ts script.",
+      "description": "Generate QR codes"
+    }
+  }
+}

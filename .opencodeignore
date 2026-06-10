@@ -1,0 +1,8 @@
+node_modules/
+dist/
+public/qrs/
+.aider*
+codigo_completo.txt
+package-lock.json
+*.log
+.git/
