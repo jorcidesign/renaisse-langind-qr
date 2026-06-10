@@ -75,6 +75,30 @@ Todo en CSS custom properties (`tokens.css`):
 | `npm run preview` | Preview del build de producción |
 | `npm run generate-qrs` | Genera QRs via `scripts/generate-qrs.ts` |
 
+## Skills de diseño disponibles
+
+Skills instaladas en `.opencode/skills/`. Se cargan on-demand vía la herramienta `skill`:
+
+| Skill | Install name | Propósito |
+|-------|-------------|-----------|
+| **taste-skill v1** | `design-taste-frontend-v1` | Skill base — layout, tipografía, motion, anti-slop |
+| **soft-skill** | `high-end-visual-design` | UI calmada/lujosa — contraste suave, mucho espacio, premium |
+| **minimalist-skill** | `minimalist-ui` | Toque editorial tipo Notion/Linear |
+| **image-to-code-skill** | `image-to-code` | Pipeline imagen → análisis → implementación |
+| **output-skill** | `full-output-enforcement` | Garantiza código completo sin placeholders |
+| **stitch-skill** | `stitch-design-taste` | Compatibilidad con el patrón `render*`/`init*` |
+
+Usar skill de diseño principal para UI nueva. Usar output-skill cuando el agente trunque código.
+
+## Playwright MCP
+
+El proyecto tiene configurado `@playwright/mcp` como MCP server local. Permite al agente:
+- Navegar y hacer clic en URLs
+- Tomar screenshots vía accesibilidad tree
+- Inspeccionar el DOM/estado del navegador
+
+Usar para verificar renders, testear responsive, o debuggear visualmente el output de `npm run dev`. Disponible en cualquier agente que tenga acceso a herramientas MCP.
+
 ## Tests
 
 No hay test suite configurada. El proyecto se verifica visualmente en el navegador.
