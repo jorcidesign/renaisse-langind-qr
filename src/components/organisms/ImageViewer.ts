@@ -7,7 +7,7 @@ const css = `
     inset: 0;
     z-index: var(--z-modal);
   }
-  #image-viewer.is-open { display: flex; }
+  #image-viewer.is-open { display: block; }
 
   .viewer-backdrop {
     position: absolute; inset: 0;
@@ -33,21 +33,18 @@ const css = `
   .viewer-close:hover { background: rgba(255,255,255,0.15); }
 
   .viewer-stage {
-    position: relative;
+    position: absolute;
+    inset: 0;
     z-index: 1;
-    width: 100%; height: 100%;
-    display: grid; place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    padding: var(--sp-xl);
-  }
-
-  @media (min-width: 769px) {
-    .viewer-stage { padding: var(--sp-2xl); }
   }
 
   .viewer-image {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 90vw;
+    max-height: 90vh;
     object-fit: contain;
     transition: transform 0.2s var(--ease-out-expo);
     will-change: transform;
