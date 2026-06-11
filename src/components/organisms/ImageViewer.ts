@@ -49,8 +49,13 @@ const css = `
     transition: transform 0.2s var(--ease-out-expo);
     will-change: transform;
     cursor: grab;
+    touch-action: none;
   }
-  .viewer-image:active { cursor: grabbing; }
+  .viewer-image.is-dragging {
+    transition: none;
+    cursor: grabbing;
+  }
+  .viewer-image.is-zoomable { cursor: grab; }
 
   .viewer-nav {
     position: absolute;
@@ -146,18 +151,33 @@ export const initImageViewer = () => {
   let images: { src: string; label: string }[] = [];
   let currentIndex = 0;
   let scale = 1;
+  let panX = 0;
+  let panY = 0;
+  let isDragging = false;
+  let dragStartX = 0;
+  let dragStartY = 0;
+  let dragOriginX = 0;
+  let dragOriginY = 0;
   const MIN_SCALE = 0.5;
   const MAX_SCALE = 5;
   const STEP = 0.25;
+
+  const setTransform = (transition = true) => {
+    stageImg.classList.toggle('is-dragging', !transition);
+    stageImg.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+    zoomLevel.textContent = `${Math.round(scale * 100)}%`;
+  };
+
+  const resetPan = () => { panX = 0; panY = 0; };
 
   const open = (index: number) => {
     if (index < 0 || index >= images.length) return;
     currentIndex = index;
     scale = window.innerWidth < 768 ? 1.5 : 1;
+    resetPan();
     stageImg.src = images[currentIndex].src;
     stageImg.alt = images[currentIndex].label;
-    stageImg.style.transform = `scale(${scale})`;
-    zoomLevel.textContent = `${Math.round(scale * 100)}%`;
+    setTransform();
     viewer.setAttribute('aria-hidden', 'false');
     viewer.classList.add('is-open');
     document.body.style.overflow = 'hidden';
@@ -168,7 +188,8 @@ export const initImageViewer = () => {
     viewer.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     scale = 1;
-    stageImg.style.transform = 'scale(1)';
+    resetPan();
+    setTransform();
   };
 
   const prev = () => {
@@ -179,19 +200,34 @@ export const initImageViewer = () => {
     if (currentIndex < images.length - 1) open(currentIndex + 1);
   };
 
-  const updateZoom = () => {
-    stageImg.style.transform = `scale(${scale})`;
-    zoomLevel.textContent = `${Math.round(scale * 100)}%`;
-  };
-
   const zoom = (dir: number) => {
     scale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scale + dir * STEP));
-    updateZoom();
+    if (scale <= 1) resetPan();
+    setTransform();
   };
 
-  const zoomTo = (s: number) => {
-    scale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, s));
-    updateZoom();
+  const startDrag = (clientX: number, clientY: number) => {
+    if (scale <= 1) return;
+    isDragging = true;
+    dragStartX = clientX;
+    dragStartY = clientY;
+    dragOriginX = panX;
+    dragOriginY = panY;
+    setTransform(false);
+  };
+
+  const moveDrag = (clientX: number, clientY: number) => {
+    if (!isDragging) return;
+    const dx = clientX - dragStartX;
+    const dy = clientY - dragStartY;
+    panX = dragOriginX + dx;
+    panY = dragOriginY + dy;
+    stageImg.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+  };
+
+  const stopDrag = () => {
+    isDragging = false;
+    setTransform(true);
   };
 
   backdrop?.addEventListener('click', close);
@@ -206,6 +242,32 @@ export const initImageViewer = () => {
     const delta = e.deltaY > 0 ? -1 : 1;
     zoom(delta);
   }, { passive: false });
+
+  stageImg.addEventListener('mousedown', (e: MouseEvent) => {
+    if (e.button !== 0) return;
+    startDrag(e.clientX, e.clientY);
+  });
+
+  document.addEventListener('mousemove', (e: MouseEvent) => {
+    moveDrag(e.clientX, e.clientY);
+  });
+
+  document.addEventListener('mouseup', stopDrag);
+
+  stageImg.addEventListener('touchstart', (e: TouchEvent) => {
+    const t = e.touches[0];
+    if (!t) return;
+    if (e.touches.length === 1) startDrag(t.clientX, t.clientY);
+  });
+
+  stageImg.addEventListener('touchmove', (e: TouchEvent) => {
+    if (e.touches.length !== 1) return;
+    const t = e.touches[0];
+    if (!t) return;
+    moveDrag(t.clientX, t.clientY);
+  });
+
+  stageImg.addEventListener('touchend', stopDrag);
 
   document.addEventListener('keydown', (e: KeyboardEvent) => {
     if (!viewer.classList.contains('is-open')) return;
