@@ -29,10 +29,12 @@ const css = `
       min-height: 700px;
       padding: var(--sp-4xl) var(--sp-2xl) var(--sp-3xl);
       justify-content: center;
+      align-items: center;
     }
     .hero-bg { width: 100vw; margin-left: 0; }
     .hero-content {
       max-width: 700px;
+      margin: 0 auto;
       margin-bottom: 0;
     }
     .hero-badge-container { margin-bottom: var(--sp-xl); }
