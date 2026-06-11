@@ -48,14 +48,12 @@ const css = `
     object-fit: contain;
     transition: transform 0.2s var(--ease-out-expo);
     will-change: transform;
-    cursor: grab;
     touch-action: none;
   }
   .viewer-image.is-dragging {
     transition: none;
     cursor: grabbing;
   }
-  .viewer-image.is-zoomable { cursor: grab; }
 
   .viewer-nav {
     position: absolute;
@@ -243,31 +241,19 @@ export const initImageViewer = () => {
     zoom(delta);
   }, { passive: false });
 
-  stageImg.addEventListener('mousedown', (e: MouseEvent) => {
+  stageImg.addEventListener('pointerdown', (e: PointerEvent) => {
     if (e.button !== 0) return;
+    e.preventDefault();
+    stageImg.setPointerCapture(e.pointerId);
     startDrag(e.clientX, e.clientY);
   });
 
-  document.addEventListener('mousemove', (e: MouseEvent) => {
+  stageImg.addEventListener('pointermove', (e: PointerEvent) => {
     moveDrag(e.clientX, e.clientY);
   });
 
-  document.addEventListener('mouseup', stopDrag);
-
-  stageImg.addEventListener('touchstart', (e: TouchEvent) => {
-    const t = e.touches[0];
-    if (!t) return;
-    if (e.touches.length === 1) startDrag(t.clientX, t.clientY);
-  });
-
-  stageImg.addEventListener('touchmove', (e: TouchEvent) => {
-    if (e.touches.length !== 1) return;
-    const t = e.touches[0];
-    if (!t) return;
-    moveDrag(t.clientX, t.clientY);
-  });
-
-  stageImg.addEventListener('touchend', stopDrag);
+  stageImg.addEventListener('pointerup', stopDrag);
+  stageImg.addEventListener('pointercancel', stopDrag);
 
   document.addEventListener('keydown', (e: KeyboardEvent) => {
     if (!viewer.classList.contains('is-open')) return;
