@@ -213,6 +213,7 @@ const css = `
     font-size: 0.85rem;
     letter-spacing: 0.15em; 
     text-transform: uppercase;
+    white-space: nowrap;
     padding: 16px 36px; 
     border-radius: 0; 
     width: 100%;

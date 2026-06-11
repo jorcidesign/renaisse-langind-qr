@@ -156,6 +156,12 @@ export const initImageViewer = () => {
   let dragStartY = 0;
   let dragOriginX = 0;
   let dragOriginY = 0;
+  let isTouching = false;
+  let touchMode: 'idle' | 'one' | 'two' = 'idle';
+  let touchStartDist = 0;
+  let touchStartMidX = 0;
+  let touchStartMidY = 0;
+  let pinchBaseScale = 1;
   const MIN_SCALE = 0.5;
   const MAX_SCALE = 5;
   const STEP = 0.25;
@@ -235,6 +241,7 @@ export const initImageViewer = () => {
   zoomOut?.addEventListener('click', () => zoom(-1));
   zoomIn?.addEventListener('click', () => zoom(1));
 
+  // ── Mouse: pointer events (solo cuando NO hay touch activo) ──
   stageImg.addEventListener('wheel', (e: WheelEvent) => {
     e.preventDefault();
     const delta = e.deltaY > 0 ? -1 : 1;
@@ -242,18 +249,116 @@ export const initImageViewer = () => {
   }, { passive: false });
 
   stageImg.addEventListener('pointerdown', (e: PointerEvent) => {
-    if (e.button !== 0) return;
+    if (e.button !== 0 || isTouching) return;
     e.preventDefault();
     stageImg.setPointerCapture(e.pointerId);
     startDrag(e.clientX, e.clientY);
   });
 
   stageImg.addEventListener('pointermove', (e: PointerEvent) => {
+    if (isTouching) return;
     moveDrag(e.clientX, e.clientY);
   });
 
-  stageImg.addEventListener('pointerup', stopDrag);
-  stageImg.addEventListener('pointercancel', stopDrag);
+  stageImg.addEventListener('pointerup', () => {
+    if (isTouching) return;
+    stopDrag();
+  });
+
+  stageImg.addEventListener('pointercancel', () => {
+    if (isTouching) return;
+    stopDrag();
+  });
+
+  // ── Touch: pan (1 dedo) + pinch-to-zoom (2 dedos) ──
+  stageImg.addEventListener('touchstart', (e: TouchEvent) => {
+    e.preventDefault();
+    isTouching = true;
+
+    if (e.touches.length === 1 && scale > 1) {
+      touchMode = 'one';
+      const t = e.touches[0];
+      dragStartX = t.clientX;
+      dragStartY = t.clientY;
+      dragOriginX = panX;
+      dragOriginY = panY;
+      isDragging = true;
+      setTransform(false);
+    } else if (e.touches.length === 2) {
+      touchMode = 'two';
+      const t1 = e.touches[0];
+      const t2 = e.touches[1];
+      touchStartDist = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
+      touchStartMidX = (t1.clientX + t2.clientX) / 2;
+      touchStartMidY = (t1.clientY + t2.clientY) / 2;
+      pinchBaseScale = scale;
+      dragOriginX = panX;
+      dragOriginY = panY;
+      isDragging = true;
+      setTransform(false);
+    }
+  });
+
+  stageImg.addEventListener('touchmove', (e: TouchEvent) => {
+    e.preventDefault();
+
+    if (touchMode === 'one' && e.touches.length === 1) {
+      const t = e.touches[0];
+      moveDrag(t.clientX, t.clientY);
+    } else if (e.touches.length === 2) {
+      const t1 = e.touches[0];
+      const t2 = e.touches[1];
+      const newDist = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
+      const newMidX = (t1.clientX + t2.clientX) / 2;
+      const newMidY = (t1.clientY + t2.clientY) / 2;
+
+      if (touchMode === 'one') {
+        touchMode = 'two';
+        touchStartDist = newDist;
+        touchStartMidX = newMidX;
+        touchStartMidY = newMidY;
+        pinchBaseScale = scale;
+        dragOriginX = panX;
+        dragOriginY = panY;
+        return;
+      }
+
+      if (touchStartDist > 0) {
+        const pinchFactor = newDist / touchStartDist;
+        scale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, pinchBaseScale * pinchFactor));
+      }
+
+      panX = dragOriginX + (newMidX - touchStartMidX);
+      panY = dragOriginY + (newMidY - touchStartMidY);
+      stageImg.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+      zoomLevel.textContent = `${Math.round(scale * 100)}%`;
+    }
+  });
+
+  stageImg.addEventListener('touchend', (e: TouchEvent) => {
+    if (e.touches.length === 0) {
+      touchMode = 'idle';
+      isDragging = false;
+      isTouching = false;
+      setTransform(true);
+    } else if (e.touches.length === 1 && touchMode === 'two') {
+      touchMode = 'one';
+      const t = e.touches[0];
+      dragStartX = t.clientX;
+      dragStartY = t.clientY;
+      dragOriginX = panX;
+      dragOriginY = panY;
+      isDragging = true;
+      setTransform(false);
+    }
+  });
+
+  stageImg.addEventListener('touchcancel', () => {
+    touchMode = 'idle';
+    isDragging = false;
+    isTouching = false;
+    setTransform(true);
+  });
 
   document.addEventListener('keydown', (e: KeyboardEvent) => {
     if (!viewer.classList.contains('is-open')) return;
