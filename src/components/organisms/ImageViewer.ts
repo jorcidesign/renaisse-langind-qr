@@ -177,7 +177,7 @@ export const initImageViewer = () => {
   const open = (index: number) => {
     if (index < 0 || index >= images.length) return;
     currentIndex = index;
-    scale = window.innerWidth < 768 ? 1.5 : 1;
+    scale = window.innerWidth < 768 ? 1.25 : 1;
     resetPan();
     stageImg.src = images[currentIndex].src;
     stageImg.alt = images[currentIndex].label;
