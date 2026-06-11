@@ -83,7 +83,13 @@ const css = `
   @media (min-width: 769px) { .slider-hint { display: none; } }
 
   @media (min-width: 900px) {
-    .slider-track { padding: 0 calc(50% - 300px) var(--sp-md); }
+    #portfolio { padding: var(--sp-5xl) 0; }
+    .portfolio-header {
+      max-width: var(--container-wide);
+      margin: 0 auto var(--sp-2xl);
+      padding: 0 var(--sp-2xl);
+    }
+    .slider-track { padding: 0 var(--sp-2xl) var(--sp-md); }
   }
 `;
 

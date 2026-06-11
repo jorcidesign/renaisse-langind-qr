@@ -47,6 +47,14 @@ const css = `
     #nav { padding: calc(var(--sp-2xl) + 12px) var(--sp-lg); }
     #nav.is-sticky { padding: var(--sp-lg) var(--sp-xl); }
   }
+
+  @media (min-width: 900px) {
+    #nav { padding: var(--sp-2xl) 0; }
+    #nav.is-sticky {
+      left: 0; right: 0;
+      padding: var(--sp-lg) 0;
+    }
+  }
 `;
 
 export const renderNav = (): string => {

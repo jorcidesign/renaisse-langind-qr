@@ -7,8 +7,22 @@ const css = `
   #services-stack { padding: 0 var(--sp-lg); max-width: var(--container); margin: 0 auto var(--sp-4xl); }
   .services-grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-md); }
 
-  @media (min-width: 600px) {
+  @media (min-width: 600px) and (max-width: 899px) {
     .services-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (min-width: 900px) {
+    #services-stack {
+      padding: var(--sp-5xl) var(--sp-2xl);
+      margin-bottom: 0;
+    }
+    .services-grid {
+      grid-template-columns: 1.5fr 1fr;
+      gap: var(--sp-xl);
+    }
+    .services-grid > *:first-child {
+      grid-row: span 2;
+    }
   }
 `;
 

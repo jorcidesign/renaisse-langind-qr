@@ -6,6 +6,10 @@ import { renaisseData } from '../../data/renaisse';
 const css = `
   #terms { padding: var(--sp-4xl) var(--sp-lg); max-width: var(--container); margin: 0 auto; }
   .accordion-list { display: flex; flex-direction: column; }
+
+  @media (min-width: 900px) {
+    #terms { padding: var(--sp-5xl) var(--sp-2xl); }
+  }
 `;
 
 export const renderTermsAccordion = (): string => {

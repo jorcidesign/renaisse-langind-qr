@@ -83,8 +83,8 @@
         --text-3xl: 3rem;
         --text-4xl: 4.5rem;
         --text-hero: 5.5rem;
-        --container: min(100% - 3rem, 600px);
-        --container-wide: min(100% - 4rem, 960px);
+        --container: min(100% - 2.5rem, 900px);
+        --container-wide: min(100% - 4rem, 1100px);
     }
 }
 

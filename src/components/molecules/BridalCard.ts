@@ -51,6 +51,10 @@ const css = `
     color: var(--c-white);
   }
   .bridal-price span { font-size: var(--text-md); font-family: var(--font-sans); opacity: 0.5; }
+
+  @media (min-width: 900px) {
+    .bridal-card { padding: var(--sp-2xl); }
+  }
 `;
 
 export const renderBridalCard = (b: any): string => {

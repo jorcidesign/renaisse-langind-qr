@@ -9,6 +9,10 @@ const css = `
   @media (min-width: 600px) {
     .bridal-grid { grid-template-columns: 1fr 1fr; }
   }
+
+  @media (min-width: 900px) {
+    .bridal-grid { gap: var(--sp-xl); }
+  }
 `;
 
 export const renderBridalGrid = (): string => {

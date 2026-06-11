@@ -95,6 +95,10 @@ const css = `
     font-weight: 400;
     opacity: 0.6;
   }
+
+  @media (min-width: 900px) {
+    .service-card { padding: var(--sp-2xl); }
+  }
 `;
 
 export const renderServiceCard = (s: any): string => {

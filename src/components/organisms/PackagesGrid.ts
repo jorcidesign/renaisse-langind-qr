@@ -9,6 +9,10 @@ const css = `
   @media (min-width: 600px) {
     .packages-grid { grid-template-columns: 1fr 1fr; }
   }
+
+  @media (min-width: 900px) {
+    .packages-grid { gap: var(--sp-xl); }
+  }
 `;
 
 export const renderPackagesGrid = (): string => {

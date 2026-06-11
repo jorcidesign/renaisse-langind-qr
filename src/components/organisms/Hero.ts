@@ -23,12 +23,28 @@ const css = `
 
   @media (min-width: 900px) {
     #hero {
-      height: 85vh;
+      height: 90vh;
       min-height: 700px;
-      padding: 0 calc(50% - 300px + var(--sp-xl)) var(--sp-2xl);
+      padding: var(--sp-4xl) var(--sp-2xl) var(--sp-3xl);
+      justify-content: center;
     }
-    .hero-content { max-width: 520px; }
-    .hero-headline { font-size: clamp(3rem, 4.5vw, 4.5rem); }
+    .hero-content {
+      max-width: 700px;
+      margin-bottom: 0;
+    }
+    .hero-badge-container { margin-bottom: var(--sp-xl); }
+    .hero-headline {
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      line-height: 0.95;
+      margin-bottom: var(--sp-lg);
+    }
+    .hero-sub {
+      max-width: 520px;
+      font-size: var(--text-md);
+    }
+    .hero-cta-wrapper {
+      justify-content: flex-start;
+    }
   }
 
   .hero-bg {

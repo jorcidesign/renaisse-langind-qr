@@ -82,6 +82,10 @@ const css = `
     padding: 3px var(--sp-xs);
     border-radius: var(--radius-full);
   }
+
+  @media (min-width: 900px) {
+    .package-card { padding: var(--sp-2xl); }
+  }
 `;
 
 export const renderPackageCard = (p: any): string => {
