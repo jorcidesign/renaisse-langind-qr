@@ -38,7 +38,11 @@ const css = `
     width: 100%; height: 100%;
     display: grid; place-items: center;
     overflow: hidden;
-    padding: var(--sp-4xl);
+    padding: var(--sp-xl);
+  }
+
+  @media (min-width: 769px) {
+    .viewer-stage { padding: var(--sp-2xl); }
   }
 
   .viewer-image {
@@ -152,11 +156,11 @@ export const initImageViewer = () => {
   const open = (index: number) => {
     if (index < 0 || index >= images.length) return;
     currentIndex = index;
-    scale = 1;
+    scale = window.innerWidth < 768 ? 1.5 : 1;
     stageImg.src = images[currentIndex].src;
     stageImg.alt = images[currentIndex].label;
-    stageImg.style.transform = 'scale(1)';
-    zoomLevel.textContent = '100%';
+    stageImg.style.transform = `scale(${scale})`;
+    zoomLevel.textContent = `${Math.round(scale * 100)}%`;
     viewer.setAttribute('aria-hidden', 'false');
     viewer.classList.add('is-open');
     document.body.style.overflow = 'hidden';
