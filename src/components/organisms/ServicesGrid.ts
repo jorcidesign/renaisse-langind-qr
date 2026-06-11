@@ -17,11 +17,8 @@ const css = `
       margin-bottom: 0;
     }
     .services-grid {
-      grid-template-columns: 1.5fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--sp-xl);
-    }
-    .services-grid > *:first-child {
-      grid-row: span 2;
     }
   }
 `;

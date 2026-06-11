@@ -38,7 +38,7 @@ const css = `
     transition: filter 0.6s var(--ease-out-expo);
     display: block;
 
-    pointer-events: none;
+    cursor: pointer;
     user-select: none;
     -webkit-user-drag: none;
   }

@@ -20,7 +20,14 @@ const css = `
     position: relative;
     z-index: 2; /* Debe estar por ENCIMA del footer dorado */
     border-bottom: 1px solid rgba(255,255,255,0.05);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5); /* Sombra para dar profundidad al deslizar */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  }
+
+  @media (min-width: 900px) {
+    #footer-cta {
+      box-shadow: none;
+      border-bottom: none;
+    }
   }
 
   #footer-cta::before {

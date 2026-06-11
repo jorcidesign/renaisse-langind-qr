@@ -23,11 +23,14 @@ const css = `
 
   @media (min-width: 900px) {
     #hero {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
       height: 90vh;
       min-height: 700px;
       padding: var(--sp-4xl) var(--sp-2xl) var(--sp-3xl);
       justify-content: center;
     }
+    .hero-bg { width: 100vw; margin-left: 0; }
     .hero-content {
       max-width: 700px;
       margin-bottom: 0;

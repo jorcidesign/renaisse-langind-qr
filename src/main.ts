@@ -23,6 +23,7 @@ import { renderBridalGrid } from './components/organisms/BridalGrid';
 import { renderPortfolioSlider, initSlider } from './components/organisms/PortfolioSlider';
 import { renderTermsAccordion, initAccordion } from './components/organisms/TermsAccordion';
 import { renderFooter } from './components/organisms/Footer';
+import { renderImageViewer, initImageViewer } from './components/organisms/ImageViewer';
 
 
 // ── 5. Construcción del DOM ───────────────────────────────────────────
@@ -38,7 +39,7 @@ const renderApp = () => {
     ${renderPackagesGrid()}
     ${renderBridalGrid()}
     ${renderTermsAccordion()}
-    ${renderFooter()} ${renderFab()}
+    ${renderFooter()} ${renderFab()} ${renderImageViewer()}
   `;
 };
 
@@ -49,6 +50,7 @@ const initInteractions = () => {
   initSlider();       // Drag & parallax del portafolio
   initAccordion();    // Términos & condiciones
   initFab();          // Efecto magnético del botón WhatsApp
+  initImageViewer();  // Visor de imágenes del portafolio
   initScrollProgress(); // Barra de progreso dorada
 
   // Disparamos el observer en el frame exacto de pintura
