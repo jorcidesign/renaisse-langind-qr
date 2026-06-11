@@ -74,6 +74,18 @@
     --z-fab: 100;
     --z-nav: 90;
     --z-modal: 200;
+    --z-progress: 99;
+}
+
+@media (min-width: 900px) {
+    :root {
+        --text-2xl: 2.25rem;
+        --text-3xl: 3rem;
+        --text-4xl: 4.5rem;
+        --text-hero: 5.5rem;
+        --container: min(100% - 3rem, 600px);
+        --container-wide: min(100% - 4rem, 960px);
+    }
 }
 
 /* 👇 NUEVO: Congela el tamaño del texto en Desktop para simular el móvil a la perfección */

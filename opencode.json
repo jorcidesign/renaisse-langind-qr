@@ -3,7 +3,7 @@
   "mcp": {
     "playwright": {
       "type": "local",
-      "command": ["npx", "@playwright/mcp@latest"],
+      "command": ["npx", "@playwright/mcp@latest", "--executable-path", "/home/jorge/.cache/ms-playwright/chromium-1223/chrome-linux64/chrome"],
       "enabled": true
     }
   },

@@ -5,10 +5,17 @@ const css = `
     flex-shrink: 0;
     width: min(80vw, 320px);
     height: 440px;
-    overflow: hidden; 
+    overflow: hidden;
     position: relative;
     background: var(--c-dark);
     border-radius: 0;
+  }
+
+  @media (min-width: 900px) {
+    .slide-item {
+      width: 340px;
+      height: 480px;
+    }
   }
 
   .slide-item__inner {

@@ -81,6 +81,10 @@ const css = `
   }
 
   @media (min-width: 769px) { .slider-hint { display: none; } }
+
+  @media (min-width: 900px) {
+    .slider-track { padding: 0 calc(50% - 300px) var(--sp-md); }
+  }
 `;
 
 export const renderPortfolioSlider = (): string => {

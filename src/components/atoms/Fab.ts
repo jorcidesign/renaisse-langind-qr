@@ -59,6 +59,12 @@ const css = `
     }
   }
 
+  @media (min-width: 900px) {
+    #fab {
+      right: calc(50% - 300px + var(--sp-xl));
+    }
+  }
+
   
 `;
 

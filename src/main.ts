@@ -10,11 +10,12 @@ import { qs } from './core/dom';
 import { waURL } from './core/whatsapp';
 import { renaisseData } from './data/renaisse';
 import { initRevealObserver } from './core/observers';
+import { initScrollProgress } from './core/scroll-progress';
 
 // ── 3. Componentes ────────────────────────────────────────────────────
 // import { renderCursor, initCursor } from './components/atoms/Cursor';
 import { renderFab, initFab } from './components/atoms/Fab';
-import { renderNav } from './components/organisms/Nav';
+import { renderNav, initNav } from './components/organisms/Nav';
 import { renderHero, initHeroShrink } from './components/organisms/Hero';
 import { renderServicesGrid } from './components/organisms/ServicesGrid';
 import { renderPackagesGrid } from './components/organisms/PackagesGrid';
@@ -43,11 +44,12 @@ const renderApp = () => {
 
 // ── 6. Lógica de Interacciones ────────────────────────────────────────
 const initInteractions = () => {
-  // initCursor();       // Cursor custom (estaba importado pero nunca montado)
+  initNav();          // Sticky nav en scroll
   initHeroShrink();   // Efecto de encogimiento del hero al hacer scroll
   initSlider();       // Drag & parallax del portafolio
   initAccordion();    // Términos & condiciones
   initFab();          // Efecto magnético del botón WhatsApp
+  initScrollProgress(); // Barra de progreso dorada
 
   // Disparamos el observer en el frame exacto de pintura
   // para evitar race conditions (igual que Innograf)

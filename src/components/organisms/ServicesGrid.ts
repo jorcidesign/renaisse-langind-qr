@@ -5,7 +5,11 @@ import { renaisseData } from '../../data/renaisse';
 
 const css = `
   #services-stack { padding: 0 var(--sp-lg); max-width: var(--container); margin: 0 auto var(--sp-4xl); }
-  .services-grid { display: flex; flex-direction: column; gap: var(--sp-md); }
+  .services-grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-md); }
+
+  @media (min-width: 600px) {
+    .services-grid { grid-template-columns: 1fr 1fr; }
+  }
 `;
 
 export const renderServicesGrid = (): string => {

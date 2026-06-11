@@ -21,6 +21,16 @@ const css = `
     }
   }
 
+  @media (min-width: 900px) {
+    #hero {
+      height: 85vh;
+      min-height: 700px;
+      padding: 0 calc(50% - 300px + var(--sp-xl)) var(--sp-2xl);
+    }
+    .hero-content { max-width: 520px; }
+    .hero-headline { font-size: clamp(3rem, 4.5vw, 4.5rem); }
+  }
+
   .hero-bg {
     position: absolute; inset: 0; z-index: 0;
     background: var(--c-dark);
