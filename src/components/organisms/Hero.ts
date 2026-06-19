@@ -71,13 +71,32 @@ const css = `
       text-align: left;
     }
     .hero-ornament {
-      display: block;
-      width: 1px;
-      height: 60px;
-      background: var(--c-gold);
-      opacity: 0.5;
-      margin-right: var(--sp-md);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-sm);
       margin-bottom: var(--sp-md);
+      height: 40px;
+    }
+    .hero-word {
+      font-family: var(--font-serif);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      color: var(--c-gold);
+      opacity: 0;
+      animation: word-cycle 12s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+      position: absolute;
+      white-space: nowrap;
+    }
+    .hero-word:nth-child(1) { animation-delay: 0s; }
+    .hero-word:nth-child(2) { animation-delay: 3s; }
+    .hero-word:nth-child(3) { animation-delay: 6s; }
+    .hero-word:nth-child(4) { animation-delay: 9s; }
+    @keyframes word-cycle {
+      0% { opacity: 0; transform: translateY(8px); }
+      15% { opacity: 1; transform: translateY(0); }
+      40% { opacity: 1; transform: translateY(0); }
+      55% { opacity: 0; transform: translateY(-8px); }
+      100% { opacity: 0; transform: translateY(-8px); }
     }
     .hero-cta-wrapper {
       justify-content: flex-start;
@@ -121,14 +140,18 @@ const css = `
     );
   }
 
-  .hero-content { 
-    position: relative; 
-    z-index: 1; 
+  .hero-content {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
+    align-items: flex-start;
     width: 100%;
-    margin-bottom: var(--sp-2xl); 
+    margin-bottom: var(--sp-3xl);
+  }
+
+  .hero-ornament {
+    display: none;
   }
 
   .hero-badge-container {
@@ -325,7 +348,12 @@ export const renderHero = (): string => {
       </div>
     </div>
     <h1 class="hero-headline reveal reveal-delay-1" id="hero-headline">${headlineHTML}</h1>
-    <div class="hero-ornament reveal reveal-delay-2"></div>
+    <div class="hero-ornament reveal reveal-delay-2" id="hero-words">
+      <div class="hero-word">Maquillaje</div>
+      <div class="hero-word">Peinado</div>
+      <div class="hero-word">Renacer</div>
+      <div class="hero-word">Belleza</div>
+    </div>
     <p class="hero-sub reveal reveal-delay-2" id="hero-sub">${heroPromo.sub}</p>
 
     <div class="hero-cta-wrapper reveal reveal-delay-3">
