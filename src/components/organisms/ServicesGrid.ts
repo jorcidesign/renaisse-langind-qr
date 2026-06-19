@@ -18,19 +18,16 @@ const css = `
     }
     .services-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: auto;
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--sp-lg);
     }
     .service-card--featured {
-      grid-column: 1;
-      grid-row: 1 / span 2;
+      transform: scale(1.05);
+      border: 2px solid var(--c-gold);
+      box-shadow: 0 20px 60px rgba(232, 190, 88, 0.2);
     }
     .service-card--featured.card-shine::before {
       border-radius: 12px;
-    }
-    .service-card:not(.service-card--featured) {
-      grid-column: 2;
     }
   }
 `;
