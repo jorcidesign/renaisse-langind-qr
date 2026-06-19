@@ -43,16 +43,52 @@ const css = `
     color: rgba(255,255,255,0.6);
   }
 
+  .nav-links {
+    display: none;
+  }
+
   @media (min-width: 520px) {
     #nav { padding: calc(var(--sp-2xl) + 12px) var(--sp-lg); }
     #nav.is-sticky { padding: var(--sp-lg) var(--sp-xl); }
   }
 
   @media (min-width: 900px) {
-    #nav { padding: var(--sp-2xl) 0; }
+    #nav {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--sp-2xl) var(--sp-3xl);
+      width: 100%;
+    }
     #nav.is-sticky {
+      position: fixed;
+      padding: var(--sp-lg) var(--sp-3xl);
       left: 0; right: 0;
-      padding: var(--sp-lg) 0;
+    }
+    .nav-logo {
+      pointer-events: auto;
+    }
+    .nav-sub {
+      display: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: var(--sp-xl);
+      align-items: center;
+      pointer-events: auto;
+    }
+    .nav-link {
+      font-family: var(--font-sans);
+      font-size: var(--text-sm);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color var(--dur-med) ease;
+      cursor: pointer;
+    }
+    .nav-link:hover {
+      color: var(--c-gold);
     }
   }
 `;
@@ -61,8 +97,14 @@ export const renderNav = (): string => {
   injectStyles('nav', css);
   return `
     <nav id="nav" aria-label="Navegación principal">
-      <span class="nav-logo">${renaisseData.brand.name}</span>
+      <div class="nav-logo">${renaisseData.brand.name}</div>
       <span class="nav-sub">Maquillaje & Peinado</span>
+      <div class="nav-links">
+        <a class="nav-link" data-section="services">Servicios</a>
+        <a class="nav-link" data-section="packages">Paquetes</a>
+        <a class="nav-link" data-section="portfolio">Portafolio</a>
+        <a class="nav-link" data-section="terms">Términos</a>
+      </div>
     </nav>
   `;
 };
@@ -81,4 +123,17 @@ export const initNav = () => {
       ticking = true;
     }
   }, { passive: true });
+
+  // Smooth scroll a secciones en desktop
+  const navLinks = nav.querySelectorAll<HTMLAnchorElement>('.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const section = link.getAttribute('data-section');
+      const target = section ? document.getElementById(section + '-stack') || document.getElementById(section) : null;
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 };

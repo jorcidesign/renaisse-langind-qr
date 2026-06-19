@@ -11,13 +11,26 @@ const css = `
   }
 
   @media (min-width: 900px) {
-    .packages-grid { gap: var(--sp-xl); }
+    .packages-grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      gap: var(--sp-xl);
+    }
+    .package-card--highlight {
+      border: 1px solid rgba(232,190,88,0.35);
+      box-shadow: 0 0 40px rgba(232,190,88,0.08);
+    }
   }
 `;
 
 export const renderPackagesGrid = (): string => {
     injectStyles('packages-grid', css);
-    const cards = renaisseData.packages.map(renderPackageCard).join('');
+    const cards = renaisseData.packages.map((pkg, i) => {
+      const cardHTML = renderPackageCard(pkg);
+      const hasHighlight = 'highlight' in pkg && pkg.highlight;
+      const cardClass = hasHighlight ? ' package-card--highlight reveal reveal-delay-' + (i + 1) : ' reveal reveal-delay-' + (i + 1);
+      return cardHTML.replace('<div class="package-card"', `<div class="package-card${cardClass}"`);
+    }).join('');
 
     return `
     <section class="section" aria-label="Paquetes">

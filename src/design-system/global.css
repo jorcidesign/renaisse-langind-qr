@@ -78,6 +78,25 @@ body {
 }
 
 @media (min-width: 900px) {
+    body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+        opacity: 0.035;
+    }
+
+    body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: 49;
+        pointer-events: none;
+        background: radial-gradient(circle 600px at 100% 0%, rgba(232, 190, 88, 0.06) 0%, transparent 80%);
+    }
+
     #app {
         max-width: 1100px;
         border-radius: 0;
@@ -92,7 +111,7 @@ body {
     }
 
     .section {
-        padding: var(--sp-5xl) var(--sp-2xl);
+        padding: var(--sp-5xl) var(--sp-3xl);
     }
 }
 
@@ -129,6 +148,36 @@ button {
     border-radius: 0;
 }
 
+.gold-line {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--c-gold), transparent);
+    opacity: 0.4;
+    margin: var(--sp-2xl) 0;
+}
+
+.section-label {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(232, 190, 88, 0.8);
+    margin-bottom: var(--sp-md);
+}
+
+@media (min-width: 900px) {
+    .section-label::before {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 1px;
+        background: var(--c-gold);
+        opacity: 0.6;
+        vertical-align: middle;
+        margin-right: var(--sp-sm);
+    }
+}
+
 .section-title {
     font-family: var(--font-serif);
     font-size: var(--text-2xl);
@@ -140,6 +189,14 @@ button {
 .section-title em {
     font-style: italic;
     color: var(--c-gold);
+}
+
+@media (min-width: 900px) {
+    .section-title {
+        font-size: var(--text-3xl);
+        letter-spacing: -0.03em;
+        margin-bottom: var(--sp-2xl);
+    }
 }
 
 /* Desactiva hover states en dispositivos táctiles */

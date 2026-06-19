@@ -1,0 +1,26 @@
+{
+  "mcps": {
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "@playwright/mcp@latest", "--executable-path", "/home/jorge/.cache/ms-playwright/chromium-1223/chrome-linux64/chrome"],
+      "enabled": true
+    }
+  },
+  "skills": {
+    "design": {
+      "primary": "design-taste-frontend-v1",
+      "available": [
+        "design-taste-frontend-v1",
+        "high-end-visual-design",
+        "minimalist-ui",
+        "image-to-code",
+        "full-output-enforcement",
+        "stitch-design-taste"
+      ]
+    }
+  },
+  "model": "haiku",
+  "permissions": {
+    "allowedTools": ["all"]
+  }
+}

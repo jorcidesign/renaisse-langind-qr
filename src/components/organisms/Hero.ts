@@ -27,28 +27,76 @@ const css = `
       margin-left: calc(50% - 50vw);
       height: 90vh;
       min-height: 700px;
-      padding: var(--sp-4xl) var(--sp-2xl) var(--sp-3xl);
+      padding: var(--sp-4xl) 0 var(--sp-3xl);
       justify-content: center;
       align-items: center;
     }
-    .hero-bg { width: 100vw; margin-left: 0; }
-    .hero-content {
-      max-width: 700px;
-      margin: 0 auto;
-      margin-bottom: 0;
+    .hero-bg {
+      width: 100vw;
+      margin-left: 0;
+      filter: brightness(0.7);
     }
-    .hero-badge-container { margin-bottom: var(--sp-xl); }
+    .hero-bg::after {
+      background: linear-gradient(
+        to right,
+        rgba(7,3,64,0.92) 0%,
+        rgba(7,3,64,0.6) 45%,
+        transparent 75%
+      );
+    }
+    .hero-content {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-left: clamp(3rem, 8vw, 8rem);
+      max-width: 580px;
+      margin: 0;
+    }
+    .hero-badge-container {
+      margin-bottom: var(--sp-xl);
+      align-self: flex-start;
+    }
     .hero-headline {
-      font-size: clamp(3.5rem, 6vw, 5.5rem);
-      line-height: 0.95;
+      font-size: clamp(4rem, 6vw, 7rem);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
       margin-bottom: var(--sp-lg);
+      text-align: left;
     }
     .hero-sub {
-      max-width: 520px;
-      font-size: var(--text-md);
+      max-width: 40ch;
+      font-size: var(--text-lg);
+      opacity: 0.75;
+      text-align: left;
+    }
+    .hero-ornament {
+      display: block;
+      width: 1px;
+      height: 60px;
+      background: var(--c-gold);
+      opacity: 0.5;
+      margin-right: var(--sp-md);
+      margin-bottom: var(--sp-md);
     }
     .hero-cta-wrapper {
       justify-content: flex-start;
+      margin-top: var(--sp-xl);
+    }
+    .hero-cta {
+      max-width: 100%;
+      width: auto;
+      padding: 18px 48px;
+      border: 1px solid rgba(232,190,88,0.4);
+      background: rgba(232,190,88,0.05);
+      color: var(--c-gold);
+      font-size: var(--text-sm);
+      transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hero-cta:hover {
+      background: rgba(232,190,88,0.15);
+      border-color: var(--c-gold);
+      box-shadow: 0 0 24px rgba(232,190,88,0.2);
     }
   }
 
@@ -180,9 +228,26 @@ const css = `
     color: var(--c-white); 
     margin-bottom: var(--sp-sm);
   }
-  .hero-headline em { 
-    font-style: italic; 
+  .hero-headline em {
+    font-style: italic;
     color: var(--c-gold);
+  }
+
+  @media (min-width: 900px) {
+    .hero-headline em {
+      animation: none;
+      background: linear-gradient(90deg,
+              var(--c-gold-dk) 0%,
+              var(--c-gold) 40%,
+              var(--c-gold-lt) 55%,
+              var(--c-gold) 70%,
+              var(--c-gold-dk) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+    }
   }
  
   .hero-sub {
@@ -260,13 +325,14 @@ export const renderHero = (): string => {
       </div>
     </div>
     <h1 class="hero-headline reveal reveal-delay-1" id="hero-headline">${headlineHTML}</h1>
+    <div class="hero-ornament reveal reveal-delay-2"></div>
     <p class="hero-sub reveal reveal-delay-2" id="hero-sub">${heroPromo.sub}</p>
-  </div>
 
-  <div class="hero-cta-wrapper reveal reveal-delay-3">
-    <a class="hero-cta" id="hero-cta" href="${waLink}" target="_blank" rel="noopener noreferrer">
-      Agendar por WhatsApp
-    </a>
+    <div class="hero-cta-wrapper reveal reveal-delay-3">
+      <a class="hero-cta" id="hero-cta" href="${waLink}" target="_blank" rel="noopener noreferrer">
+        Agendar Ahora
+      </a>
+    </div>
   </div>
 </section>
   `;

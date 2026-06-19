@@ -13,19 +13,36 @@ const css = `
 
   @media (min-width: 900px) {
     #services-stack {
-      padding: var(--sp-5xl) var(--sp-2xl);
+      padding: var(--sp-5xl) var(--sp-3xl);
       margin-bottom: 0;
     }
     .services-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--sp-xl);
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto;
+      gap: var(--sp-lg);
+    }
+    .service-card--featured {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+    .service-card--featured.card-shine::before {
+      border-radius: 12px;
+    }
+    .service-card:not(.service-card--featured) {
+      grid-column: 2;
     }
   }
 `;
 
 export const renderServicesGrid = (): string => {
     injectStyles('services-grid', css);
-    const cards = renaisseData.services.map(renderServiceCard).join('');
+    const cards = renaisseData.services.map((service, i) => {
+      const hasTag = 'tag' in service && service.tag;
+      const cardHTML = renderServiceCard(service);
+      const cardClass = hasTag ? ' service-card--featured card-shine' : '';
+      return cardHTML.replace('<div class="service-card"', `<div class="service-card${cardClass}"`);
+    }).join('');
 
     return `
     <section id="services-stack" aria-label="Servicios">
