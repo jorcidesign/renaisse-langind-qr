@@ -9,12 +9,12 @@ export const renaisseData = {
         email: "hola@renaisse.beauty",
     },
     heroPromo: {
-        badge: "40% OFF",
-        badgeLabel: "En tu primera cita",
+        badge: "Servicios",
+        badgeLabel: "Maquillaje profesional",
         headline: ["TU MEJOR", "VERSIÓN", "TE ESPERA"],
         sub: "Maquillaje & Peinado Profesional en Lima — Tu transformación comienza aquí.",
         cta: "Agendar Ahora",
-        disclaimer: "*Aplica términos y condiciones.",
+        disclaimer: "*Consulta disponibilidad y condiciones del servicio.",
     },
     services: [
         { id: "makeup-social", category: "Maquillaje", title: "Maquillaje Social", tagline: "Pieles de alta duración, técnicas en tendencia.", description: "Ideal para resaltar tu belleza en el lugar que desees. Incluye sombras de ojos profundas, pieles de alta duración, diferentes técnicas en tendencia y asesoría personalizada según ocasión.", prices: { domicilio: 120, estudio: 95 }, tag: "Más popular" },
@@ -34,7 +34,7 @@ export const renaisseData = {
     termsAndConditions: [
         { title: "Reserva & Abono", body: "Absolutamente todo servicio se separa con un 50% de abono adelantado. El resto se cancela el mismo día del servicio por Yape o efectivo." },
         { title: "Puntualidad", body: "Se pide a la cliente ser puntual a la hora del servicio, caso contrario se aplicará una penalidad en caso la demora pase de los 20 minutos." },
-        { title: "Servicios Adicionales", body: "El servicio de maquillaje no incluye pestañas, parches, mascarillas o botox instantáneos. Todo lo mencionado cuenta como un adicional a menos que aplique según promociones vigentes." },
+        { title: "Servicios Adicionales", body: "El servicio de maquillaje no incluye pestañas, parches, mascarillas o botox instantáneos. Todo lo mencionado cuenta como un adicional." },
         { title: "Movilidad", body: "Si adquiere el servicio a domicilio incluye un costo de movilidad aparte (según ubicación). En el caso que sea en el mismo distrito o estudio no se cobrará la movilidad." },
         { title: "Devoluciones", body: "Una vez terminado el servicio no hay lugar a devoluciones por ningún motivo." },
     ],

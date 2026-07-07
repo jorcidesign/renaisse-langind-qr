@@ -23,51 +23,70 @@ const css = `
 
   @media (min-width: 900px) {
     #hero {
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
+      width: min(1100px, calc(100vw - 48px));
+      margin: 0 auto;
       height: 90vh;
       min-height: 700px;
-      padding: var(--sp-4xl) 0 var(--sp-3xl);
+      padding: var(--sp-4xl) clamp(2rem, 3vw, 3rem) var(--sp-3xl);
       justify-content: center;
-      align-items: center;
+      align-items: stretch;
+      border-radius: 0;
     }
     .hero-bg {
-      width: 100vw;
-      margin-left: 0;
-      filter: brightness(0.7);
+      width: 100%;
+      background: #000000;
+      filter: brightness(0.72);
     }
     .hero-bg::after {
       background: linear-gradient(
         to right,
-        rgba(7,3,64,0.92) 0%,
-        rgba(7,3,64,0.6) 45%,
-        transparent 75%
+        rgba(0,0,0,0.96) 0%,
+        rgba(0,0,0,0.88) 36%,
+        rgba(0,0,0,0.26) 62%,
+        rgba(0,0,0,0) 82%
       );
     }
+    .hero-bg img {
+      object-fit: cover;
+      object-position: 74% center;
+      filter: brightness(0.78) contrast(1.02) saturate(0.92);
+      transform: none;
+    }
+    .hero-stage {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.88fr);
+      align-items: center;
+      gap: clamp(2rem, 4vw, 4rem);
+      width: 100%;
+      height: 100%;
+    }
     .hero-content {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      padding-left: clamp(3rem, 8vw, 8rem);
-      max-width: 580px;
+      position: relative;
+      left: auto;
+      top: auto;
+      transform: none;
+      padding-left: 0;
+      max-width: 560px;
       margin: 0;
+      align-self: center;
     }
     .hero-badge-container {
       margin-bottom: var(--sp-xl);
       align-self: flex-start;
     }
     .hero-headline {
-      font-size: clamp(4rem, 6vw, 7rem);
-      line-height: 1.0;
+      font-size: clamp(4rem, 5.8vw, 6.8rem);
+      line-height: 0.92;
       letter-spacing: -0.02em;
       margin-bottom: var(--sp-lg);
       text-align: left;
     }
     .hero-sub {
-      max-width: 40ch;
-      font-size: var(--text-lg);
-      opacity: 0.75;
+      max-width: 36ch;
+      font-size: var(--text-md);
+      opacity: 0.82;
       text-align: left;
     }
     .hero-ornament {
@@ -81,7 +100,7 @@ const css = `
       font-family: var(--font-serif);
       font-size: var(--text-lg);
       font-weight: 600;
-      color: var(--c-gold);
+      color: var(--c-dark);
       position: absolute;
       white-space: nowrap;
       left: 0;
@@ -102,43 +121,49 @@ const css = `
     .hero-cta-wrapper {
       justify-content: flex-start;
       margin-top: var(--sp-xl);
+      align-self: flex-start;
     }
     .hero-cta {
+      display: inline-block;
       max-width: 100%;
       width: auto;
-      padding: 18px 48px;
-      border: 1px solid rgba(232,190,88,0.4);
-      background: rgba(232,190,88,0.05);
-      color: var(--c-gold);
+      padding: 20px 40px;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      background: var(--c-gold);
+      color: var(--c-dark);
       font-size: var(--text-sm);
-      transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: transform var(--dur-med) var(--ease-out-expo), box-shadow var(--dur-med);
+      box-shadow: 0 6px 20px rgba(232, 190, 88, 0.2);
     }
     .hero-cta:hover {
-      background: rgba(232,190,88,0.15);
-      border-color: var(--c-gold);
-      box-shadow: 0 0 24px rgba(232,190,88,0.2);
-      transform: translateY(-2px);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-gold);
     }
   }
 
   .hero-bg {
     position: absolute; inset: 0; z-index: 0;
-    background: var(--c-dark);
+    background: #000000;
   }
   .hero-bg img {
     width: 100%; height: 100%; 
     object-fit: cover; 
     object-position: center 30%; 
-    filter: brightness(0.8);
+    filter: brightness(0.72);
   }
   .hero-bg::after {
     content: ''; position: absolute; inset: 0;
     background: linear-gradient(
       to bottom, 
-      rgba(7,3,64,0.4) 0%, 
+      rgba(0,0,0,0.4) 0%, 
       transparent 25%, 
       transparent 55%, 
-      var(--c-dark) 100%
+      #000000 100%
     );
   }
 
@@ -288,7 +313,7 @@ const css = `
     z-index: 1;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin-bottom: var(--sp-sm);
     margin-top: var(--sp-lg);
   }
@@ -323,6 +348,12 @@ const css = `
     transform: translateY(2px) scale(0.98);
     box-shadow: 0 4px 12px rgba(232, 190, 88, 0.15); 
   }
+
+  @media (max-width: 899px) {
+    .hero-cta-wrapper {
+      justify-content: center;
+    }
+  }
 `;
 
 export const renderHero = (): string => {
@@ -338,33 +369,35 @@ export const renderHero = (): string => {
 
   return `
    <section id="hero" aria-label="Hero">
-  <div class="hero-bg" id="hero-bg">
-    <img src="${placeholderImg}" alt="Renaisse — Maquillaje profesional" fetchpriority="high" id="hero-img" />
-  </div>
-  
-  <div class="hero-content">
-    <div class="hero-badge-container reveal">
-      <div class="hero-badge">
-        <span class="badge-number">40% OFF</span>
-        <div class="badge-divider"></div>
-        <span class="badge-label">${heroPromo.badgeLabel}</span>
+    <div class="hero-bg" id="hero-bg">
+      <img src="${placeholderImg}" alt="Renaisse — Maquillaje profesional" fetchpriority="high" id="hero-img" />
+    </div>
+
+    <div class="hero-stage">
+      <div class="hero-content">
+        <div class="hero-badge-container reveal">
+          <div class="hero-badge">
+            <span class="badge-number">${heroPromo.badge}</span>
+            <div class="badge-divider"></div>
+            <span class="badge-label">${heroPromo.badgeLabel}</span>
+          </div>
+        </div>
+        <h1 class="hero-headline reveal reveal-delay-1" id="hero-headline">${headlineHTML}</h1>
+        <div class="hero-ornament reveal reveal-delay-2" id="hero-words">
+          <div class="hero-word">Maquillaje</div>
+          <div class="hero-word">Peinado</div>
+          <div class="hero-word">Renacer</div>
+          <div class="hero-word">Belleza</div>
+        </div>
+        <p class="hero-sub reveal reveal-delay-2" id="hero-sub">${heroPromo.sub}</p>
+
+        <div class="hero-cta-wrapper reveal reveal-delay-3">
+          <a class="hero-cta" id="hero-cta" href="${waLink}" target="_blank" rel="noopener noreferrer">
+            Agendar Ahora
+          </a>
+        </div>
       </div>
     </div>
-    <h1 class="hero-headline reveal reveal-delay-1" id="hero-headline">${headlineHTML}</h1>
-    <div class="hero-ornament reveal reveal-delay-2" id="hero-words">
-      <div class="hero-word">Maquillaje</div>
-      <div class="hero-word">Peinado</div>
-      <div class="hero-word">Renacer</div>
-      <div class="hero-word">Belleza</div>
-    </div>
-    <p class="hero-sub reveal reveal-delay-2" id="hero-sub">${heroPromo.sub}</p>
-
-    <div class="hero-cta-wrapper reveal reveal-delay-3">
-      <a class="hero-cta" id="hero-cta" href="${waLink}" target="_blank" rel="noopener noreferrer">
-        Agendar Ahora
-      </a>
-    </div>
-  </div>
 </section>
   `;
 };

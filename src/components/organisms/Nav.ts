@@ -29,10 +29,6 @@ const css = `
     font-weight: 600;
     color: var(--c-gold);
     line-height: 1;
-    transition: font-size var(--dur-med);
-  }
-  #nav.is-sticky .nav-logo {
-    font-size: var(--text-xl);
   }
   .nav-sub {
     font-family: var(--font-sans);
@@ -57,13 +53,18 @@ const css = `
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding: var(--sp-2xl) var(--sp-3xl);
-      width: 100%;
+      padding: var(--sp-xl) var(--sp-3xl);
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1100px, calc(100vw - 48px));
     }
     #nav.is-sticky {
       position: fixed;
-      padding: var(--sp-lg) var(--sp-3xl);
-      left: 0; right: 0;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+      width: min(1100px, calc(100vw - 48px));
+      padding: var(--sp-xl) var(--sp-3xl);
     }
     .nav-logo {
       pointer-events: auto;

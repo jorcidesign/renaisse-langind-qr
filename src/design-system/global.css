@@ -20,11 +20,8 @@ html {
 body {
     min-height: 100%;
     font-family: var(--font-sans);
-    background-color: #1a1a2e;
-    /* Fondo oscuro elegante que combina con el azul marino de Renaisse */
-
-    /* Patrón de ruido imperceptible con SVG inline */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    background-color: #000000;
+    background-image: none;
 
     /* Centra el #app en desktop */
     display: flex;
@@ -79,22 +76,11 @@ body {
 
 @media (min-width: 900px) {
     body::before {
-        content: '';
-        position: fixed;
-        inset: 0;
-        z-index: 50;
-        pointer-events: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-        opacity: 0.035;
+        content: none;
     }
 
     body::after {
-        content: '';
-        position: fixed;
-        inset: 0;
-        z-index: 49;
-        pointer-events: none;
-        background: radial-gradient(circle 600px at 100% 0%, rgba(232, 190, 88, 0.06) 0%, transparent 80%);
+        content: none;
     }
 
     #app {
@@ -105,7 +91,7 @@ body {
     }
 
     body {
-        background: var(--c-dark);
+        background: #000000;
         align-items: flex-start;
         padding: 0;
     }
