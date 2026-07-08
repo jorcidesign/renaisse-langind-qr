@@ -4,7 +4,11 @@ import { renderSlideItem } from '../molecules/SlideItem';
 import { renaisseData } from '../../data/renaisse';
 
 const css = `
-  #portfolio { overflow: hidden; padding: var(--sp-4xl) 0; }
+  #portfolio {
+    overflow: hidden;
+    padding: var(--sp-4xl) 0;
+    border-top: 1px solid rgba(232,190,88,0.10);
+  }
 
   .portfolio-header {
     padding: 0 var(--sp-xl);
@@ -101,7 +105,9 @@ const css = `
 
   @media (min-width: 900px) {
     #portfolio {
-      padding: var(--sp-5xl) var(--sp-3xl);
+      width: var(--container);
+      padding: clamp(72px, 8vw, 118px) 0;
+      margin-inline: auto;
       overflow: visible;
     }
     .portfolio-header {
@@ -110,11 +116,17 @@ const css = `
       padding: 0;
     }
     .slider-track {
-      padding: 0 var(--sp-4xl);
+      padding: 0;
       gap: var(--sp-lg);
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      overflow: visible;
+      cursor: default;
     }
+    .slider-track > * { scroll-snap-align: unset; }
     .slide-item {
-      width: clamp(300px, 40vw, 480px);
+      width: auto;
+      height: auto;
       aspect-ratio: 3/4;
       transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
     }

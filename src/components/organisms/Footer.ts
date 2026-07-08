@@ -1,218 +1,171 @@
 import { injectStyles } from '../../core/dom';
 import { renaisseData } from '../../data/renaisse';
 import { waURL } from '../../core/whatsapp';
+import ctaBrushes from '../../assets/images/cta-brushes.webp';
 
 const css = `
-  /* * ESTRUCTURA PARALLAX 
-   * El contenedor envuelve el CTA (que fluye normal) y el Footer (que se queda pegado al fondo) 
-   */
   .footer-parallax-wrapper {
     position: relative;
-    z-index: 1;
-    /* Se asegura de estar sobre el contenido anterior */
+    border-top: 1px solid rgba(232,190,88,0.10);
   }
 
-  /* ── CTA Section (Azul Marino) ── */
   #footer-cta {
-    background: var(--c-dark);
-    padding: var(--sp-5xl) var(--sp-lg);
-    text-align: center;
     position: relative;
-    z-index: 2; /* Debe estar por ENCIMA del footer dorado */
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-  }
-
-  @media (min-width: 900px) {
-    #footer-cta {
-      box-shadow: none;
-      border-bottom: none;
-    }
+    min-height: 260px;
+    display: grid;
+    place-items: center;
+    padding: var(--sp-4xl) var(--sp-lg);
+    text-align: center;
+    overflow: hidden;
+    background: #070019;
   }
 
   #footer-cta::before {
     content: '';
     position: absolute;
-    top: 0; left: 50%;
-    transform: translateX(-50%);
-    width: 40px; height: 2px;
-    background: var(--c-gold);
-    border-radius: 0;
+    inset: 0;
+    background-image: var(--cta-image);
+    background-size: cover;
+    background-position: left center;
+    filter: brightness(0.84) saturate(1.02);
+    transform: scale(1.02);
+  }
+
+  #footer-cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(7,0,25,0.68), rgba(7,0,25,0.82)),
+      radial-gradient(circle at 50% 50%, rgba(232,190,88,0.12), transparent 32%);
+  }
+
+  .footer-cta-inner {
+    position: relative;
+    z-index: 1;
   }
 
   .footer-cta-tagline {
     font-family: var(--font-serif);
-    font-style: italic;
-    font-size: var(--text-xl);
-    color: rgba(255,255,255,0.7);
-    margin-bottom: var(--sp-2xl);
-    letter-spacing: 0.01em;
+    font-size: clamp(2.1rem, 4vw, 4rem);
+    font-weight: 600;
+    color: var(--c-text);
+    margin-bottom: var(--sp-xl);
+    letter-spacing: -0.035em;
   }
 
   .footer-cta-btn {
-    display: inline-block;
-    background: var(--c-gold);
-    color: var(--c-dark);
-    font-family: var(--font-sans);
-    font-size: var(--text-2xs);
-    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 34px;
+    background: var(--gradient-gold);
+    color: #160900;
+    font-size: 0.72rem;
+    font-weight: 800;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    padding: 20px 40px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    border: none;
+    box-shadow: 0 16px 40px rgba(232,190,88,0.2);
     transition: transform var(--dur-med) var(--ease-out-expo), box-shadow var(--dur-med);
   }
 
-  .footer-cta-btn:hover { 
-    transform: translateY(-4px); 
+  .footer-cta-btn:hover {
+    transform: translateY(-4px);
     box-shadow: var(--shadow-gold);
   }
 
-  /* ── Footer principal (Dorado) ── */
-  /* La magia del parallax está en 'sticky' y 'bottom: 0' */
   #footer {
-    background: var(--c-gold);
+    background: rgba(5,0,18,0.96);
     padding: var(--sp-3xl) var(--sp-lg) var(--sp-xl);
-    position: sticky;
-    bottom: 0;
-    z-index: 0; /* Por DEBAJO del CTA */
+    border-top: 1px solid rgba(232,190,88,0.12);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 400px;
-  }
-
-  /* Nombre en background — efecto editorial Awwwards */
-  .footer-bg-name {
-    position: absolute;
-    bottom: -0.1em; /* Ligeramente recortado abajo */
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: var(--font-serif);
-    font-size: clamp(6rem, 25vw, 10rem); /* Gigante y responsivo */
-    font-weight: 700;
-    line-height: 1;
-    color: rgba(7,3,64,0.06); /* Apenas visible, súper sutil */
-    letter-spacing: -0.04em;
-    pointer-events: none;
-    user-select: none;
-    white-space: nowrap;
-    z-index: 0;
   }
 
   .footer-inner {
-    position: relative;
-    z-index: 1;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    width: var(--container);
+    margin: 0 auto;
   }
 
-  .footer-logo-block { margin-bottom: var(--sp-3xl); text-align: left; }
-  
+  .footer-grid {
+    display: grid;
+    gap: var(--sp-2xl);
+  }
+
   .footer-logo {
     font-family: var(--font-serif);
     font-size: var(--text-3xl);
     font-weight: 700;
-    color: var(--c-dark);
+    color: var(--c-gold);
     line-height: 1;
-    letter-spacing: -0.02em;
-    margin-bottom: var(--sp-xs);
+    letter-spacing: -0.035em;
+    margin-bottom: var(--sp-md);
   }
 
   .footer-slogan {
-    font-family: var(--font-sans);
-    font-size: var(--text-2xs);
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: rgba(7,3,64,0.6);
+    max-width: 28ch;
+    color: var(--c-text-muted);
+    font-size: var(--text-sm);
+    line-height: 1.7;
   }
 
-  /* Nav links tipo lista editorial con flecha ↗ */
-  .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin-bottom: var(--sp-3xl);
+  .footer-title {
+    margin-bottom: var(--sp-md);
+    color: var(--c-text-soft);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
   }
 
-  .footer-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(7,3,64,0.12);
-    position: relative;
-    overflow: hidden;
-    color: rgba(7,3,64,0.85);
-    font-family: var(--font-sans);
-    font-size: var(--text-xs);
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+  .footer-list {
+    display: grid;
+    gap: var(--sp-sm);
+  }
+
+  .footer-link,
+  .footer-text {
+    color: var(--c-text-muted);
+    font-size: var(--text-sm);
+    line-height: 1.5;
     transition: color var(--dur-fast);
   }
 
-  .footer-link:first-child { border-top: 1px solid rgba(7,3,64,0.12); }
-  
-  /* Animación de fondo al pasar el cursor */
-  .footer-link::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(7,3,64,0.05);
-    transform: translateX(-100%);
-    transition: transform var(--dur-med) var(--ease-out-expo);
-    z-index: -1;
+  .footer-link:hover {
+    color: var(--c-gold);
   }
 
-  .footer-link:hover { color: var(--c-dark); }
-  .footer-link:hover::before { transform: translateX(0); }
-
-  .footer-link-arrow {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: rgba(7,3,64,0.4);
-    transition: transform var(--dur-med) var(--ease-out-expo), color var(--dur-fast);
-  }
-
-  .footer-link:hover .footer-link-arrow {
-    transform: translate(3px, -3px);
-    color: var(--c-dark);
-  }
-
-  /* Textos inferiores */
   .footer-bottom {
+    margin-top: var(--sp-3xl);
+    padding-top: var(--sp-lg);
+    border-top: 1px solid rgba(255,255,255,0.08);
     display: flex;
     flex-direction: column;
     gap: var(--sp-sm);
-    margin-top: auto;
-    text-align: center;
+    color: var(--c-text-soft);
+    font-size: 0.72rem;
   }
 
-  .footer-copy {
-    font-family: var(--font-sans);
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(7,3,64,0.5);
-  }
+  @media (min-width: 900px) {
+    #footer-cta {
+      min-height: 310px;
+      padding: var(--sp-5xl) 0;
+    }
 
-  .footer-credit {
-    font-family: var(--font-sans);
-    font-size: 9px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(7,3,64,0.35);
-  }
+    #footer {
+      padding: var(--sp-3xl) 0 var(--sp-xl);
+    }
 
-  .footer-credit span {
-    font-weight: 700;
-    color: var(--c-dark);
+    .footer-grid {
+      grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr;
+      align-items: start;
+    }
+
+    .footer-bottom {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 `;
 
@@ -221,42 +174,56 @@ export const renderFooter = (): string => {
   const { brand } = renaisseData;
   const waLink = waURL(brand.whatsappNumber, brand.whatsappMessage);
   const year = new Date().getFullYear();
-  const links = [
-    { label: 'Instagram', href: brand.instagram },
-    { label: 'TikTok', href: brand.tiktok },
-    { label: 'Email', href: `mailto:${brand.email}` },
-  ];
-
-  const linksHTML = links.map(l => `
-      <a class="footer-link" href="${l.href}" target="_blank" rel="noopener noreferrer">
-        <span>${l.label}</span>
-        <span class="footer-link-arrow">↗</span>
-      </a>
-    `).join('');
 
   return `
     <div class="footer-parallax-wrapper">
-      <section id="footer-cta">
-        <p class="footer-cta-tagline">¿Lista para brillar?</p>
-        <a class="footer-cta-btn" href="${waLink}" target="_blank" rel="noopener noreferrer">Agendar mi cita ahora</a>
+      <section id="footer-cta" style="--cta-image: url('${ctaBrushes}')">
+        <div class="footer-cta-inner">
+          <p class="footer-cta-tagline">¿Lista para brillar?</p>
+          <a class="footer-cta-btn" href="${waLink}" target="_blank" rel="noopener noreferrer">Agendar mi cita ahora</a>
+        </div>
       </section>
 
       <footer id="footer" aria-label="Footer">
-        <div class="footer-bg-name" aria-hidden="true">${brand.name.replace('!', '')}</div>
-        
         <div class="footer-inner">
-          <div class="footer-logo-block">
-            <div class="footer-logo">${brand.name}</div>
-            <p class="footer-slogan">${brand.slogan}</p>
+          <div class="footer-grid">
+            <div>
+              <div class="footer-logo">${brand.name}</div>
+              <p class="footer-slogan">Maquillaje & Peinado Profesional. Resalta tu esencia, vive tu mejor versión.</p>
+            </div>
+
+            <div>
+              <p class="footer-title">Enlaces</p>
+              <nav class="footer-list" aria-label="Enlaces de footer">
+                <a class="footer-link" href="#services-stack">Servicios</a>
+                <a class="footer-link" href="#portfolio">Portafolio</a>
+                <a class="footer-link" href="#packages-stack">Combos</a>
+                <a class="footer-link" href="#terms">Políticas</a>
+              </nav>
+            </div>
+
+            <div>
+              <p class="footer-title">Sígueme</p>
+              <div class="footer-list">
+                <a class="footer-link" href="${brand.instagram}" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a class="footer-link" href="${brand.tiktok}" target="_blank" rel="noopener noreferrer">TikTok</a>
+                <a class="footer-link" href="${waLink}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              </div>
+            </div>
+
+            <div>
+              <p class="footer-title">Contacto</p>
+              <div class="footer-list">
+                <p class="footer-text">Lima, Perú</p>
+                <a class="footer-link" href="${waLink}" target="_blank" rel="noopener noreferrer">+51 922 644 511</a>
+                <a class="footer-link" href="mailto:${brand.email}">${brand.email}</a>
+              </div>
+            </div>
           </div>
-          
-          <nav class="footer-links" aria-label="Social links">
-            ${linksHTML}
-          </nav>
-          
+
           <div class="footer-bottom">
-            <p class="footer-copy">© ${year} ${brand.name.replace('!', '')} — Todos los derechos reservados.</p>
-            <p class="footer-credit">Digital Experience by <span>Astostudios</span></p>
+            <p>© ${year} ${brand.name.replace('!', '')}. Todos los derechos reservados.</p>
+            <a class="footer-link" href="#terms">Política de privacidad</a>
           </div>
         </div>
       </footer>

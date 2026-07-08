@@ -11,8 +11,8 @@ export const renaisseData = {
     heroPromo: {
         badge: "Servicios",
         badgeLabel: "Maquillaje profesional",
-        headline: ["TU MEJOR", "VERSIÓN", "TE ESPERA"],
-        sub: "Maquillaje & Peinado Profesional en Lima — Tu transformación comienza aquí.",
+        headline: ["Tu mejor", "versión", "te espera."],
+        sub: "Maquillaje & Peinado Profesional con las mejores técnicas para que te sientas única en cada ocasión.",
         cta: "Agendar Ahora",
         disclaimer: "*Consulta disponibilidad y condiciones del servicio.",
     },
@@ -20,6 +20,7 @@ export const renaisseData = {
         { id: "makeup-social", category: "Maquillaje", title: "Maquillaje Social", tagline: "Pieles de alta duración, técnicas en tendencia.", description: "Ideal para resaltar tu belleza en el lugar que desees. Incluye sombras de ojos profundas, pieles de alta duración, diferentes técnicas en tendencia y asesoría personalizada según ocasión.", prices: { domicilio: 120, estudio: 95 }, tag: "Más popular" },
         { id: "hair-pro", category: "Peinado", title: "Peinado Profesional", tagline: "Fijación máxima, acabado impecable.", description: "Ideal para realzar y complementar tu maquillaje. Incluye productos de fijación máxima y asesoría de peinado según tu morfología.", prices: { domicilio: 50, estudio: 50 }, tag: null },
         { id: "hair-others", category: "Peinado", title: "Cepillados & Planchados", tagline: "Acabados rápidos y prolijos.", description: "Para cualquier ocasión. Liso espejo, ondas naturales o volumen controlado — siempre con productos de calidad profesional.", prices: { base: 39 }, tag: null },
+        { id: "image-consulting", category: "Consulta", title: "Asesoría de Imagen", tagline: "Tu mejor versión con intención.", description: "Te acompaño a descubrir un estilo personal coherente con tu rostro, ocasión, maquillaje y cuidado diario.", prices: { base: 99 }, tag: null },
     ],
     packages: [
         { id: "pack-social", title: "Paquete Social", tagline: "El combo perfecto.", description: "Maquillaje social + peinado profesional en un solo servicio.", price: 160, savings: "Ahorra S/10", highlight: false },

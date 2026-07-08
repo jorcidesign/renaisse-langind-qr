@@ -2,14 +2,17 @@ import { injectStyles } from '../../core/dom';
 
 const css = `
   .accordion-item {
-    border-bottom: 1px solid rgba(232,190,88,0.2);
+    border: 1px solid rgba(232,190,88,0.14);
+    border-bottom: 0;
+    background: rgba(255,255,255,0.025);
   }
+  .accordion-item:last-child { border-bottom: 1px solid rgba(232,190,88,0.14); }
   .accordion-trigger {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--sp-lg) 0;
+    padding: var(--sp-lg);
     text-align: left;
     cursor: pointer;
     transition: color var(--dur-fast);
@@ -18,7 +21,7 @@ const css = `
   
   .acc-title {
     font-family: var(--font-sans);
-    font-size: var(--text-md);
+    font-size: var(--text-sm);
     font-weight: 400; /* Look limpio sin negritas */
     color: var(--c-white);
     transition: color var(--dur-fast);
@@ -55,7 +58,7 @@ const css = `
   
   
   .accordion-body-inner {
-    padding-bottom: var(--sp-lg);
+    padding: 0 var(--sp-lg) var(--sp-lg);
   }
   
   .accordion-body p {

@@ -5,7 +5,9 @@
 
 :root {
     /* ── Paleta ── */
-    --c-dark: #070340;
+    --c-dark: #070019;
+    --c-bg-2: #0d0328;
+    --c-bg-3: #16063d;
     --c-gold: #E8BE58;
     --c-gold-lt: #F2D07A;
     --c-gold-dk: #B8942A;
@@ -15,6 +17,18 @@
     --c-dark-60: rgba(7, 3, 64, 0.60);
     --c-gold-20: rgba(232, 190, 88, 0.20);
     --c-gold-08: rgba(232, 190, 88, 0.08);
+    --c-surface: rgba(255, 255, 255, 0.045);
+    --c-surface-2: rgba(255, 255, 255, 0.075);
+    --c-border: rgba(221, 177, 86, 0.22);
+    --c-text: #fff8ec;
+    --c-text-muted: rgba(255, 248, 236, 0.68);
+    --c-text-soft: rgba(255, 248, 236, 0.48);
+    --gradient-page:
+        radial-gradient(circle at 18% 8%, rgba(111, 48, 255, .32), transparent 34%),
+        radial-gradient(circle at 82% 18%, rgba(129, 47, 150, .28), transparent 35%),
+        linear-gradient(180deg, #070019 0%, #110330 48%, #08001c 100%);
+    --gradient-card: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+    --gradient-gold: linear-gradient(135deg, #f7d778, #c9902e);
 
     /* ── Tipografía ── */
     --font-serif: 'Cormorant Garamond', 'Georgia', serif;
@@ -69,7 +83,7 @@
     --dur-xl: 1100ms;
 
     /* ── Layout ── */
-    --container: min(100% - 2.5rem, 640px);
+    --container: min(100% - 2rem, 640px);
     --container-wide: min(100% - 2rem, 900px);
     --z-fab: 100;
     --z-nav: 90;
@@ -83,13 +97,13 @@
         --text-3xl: 3rem;
         --text-4xl: 4.5rem;
         --text-hero: 5.5rem;
-        --container: min(100% - 2.5rem, 900px);
-        --container-wide: min(100% - 4rem, 1100px);
+        --container: min(100% - 48px, 1180px);
+        --container-wide: min(100% - 48px, 1240px);
     }
 }
 
 /* 👇 NUEVO: Congela el tamaño del texto en Desktop para simular el móvil a la perfección */
-@media (min-width: 520px) {
+@media (min-width: 520px) and (max-width: 899px) {
     :root {
         --text-2xs: 0.75rem;
         --text-xs: 0.875rem;

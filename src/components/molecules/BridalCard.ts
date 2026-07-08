@@ -3,8 +3,9 @@ import { injectStyles } from '../../core/dom';
 const css = `
   .bridal-card {
     position: relative;
-    background: linear-gradient(135deg, rgba(232,190,88,0.06) 0%, rgba(7,3,64,0.4) 100%);
-    border: 1px solid rgba(232,190,88,0.2);
+    min-height: 100%;
+    background: var(--gradient-card);
+    border: 1px solid var(--c-border);
     border-radius: var(--radius-lg);
     padding: var(--sp-xl);
     overflow: hidden;
@@ -13,14 +14,15 @@ const css = `
   }
   .bridal-card:hover {
     transform: translateY(-6px);
-    box-shadow: var(--shadow-card), var(--shadow-gold);
+    border-color: rgba(232,190,88,0.55);
+    box-shadow: 0 24px 80px rgba(0,0,0,.24), 0 0 34px rgba(232,190,88,0.1);
   }
   .bridal-card__isotipo {
     position: absolute;
-    bottom: -15px;
-    right: -10px;
-    width: 120px;
-    height: 135px;
+    bottom: -32px;
+    right: -20px;
+    width: 150px;
+    height: 165px;
     color: var(--c-gold);
     opacity: 0.05;
     pointer-events: none;
@@ -35,25 +37,36 @@ const css = `
     font-family: var(--font-serif);
     font-size: var(--text-2xl);
     font-weight: 600;
-    color: var(--c-gold);
+    color: var(--c-text);
     margin-bottom: var(--sp-md);
   }
   .bridal-card__desc {
     font-size: var(--text-sm);
     line-height: 1.7;
-    color: rgba(255,255,255,0.65);
+    color: var(--c-text-muted);
     margin-bottom: var(--sp-xl);
   }
   .bridal-price {
     font-family: var(--font-serif);
     font-size: var(--text-3xl);
     font-weight: 700;
-    color: var(--c-white);
+    color: var(--c-gold);
   }
   .bridal-price span { font-size: var(--text-md); font-family: var(--font-sans); opacity: 0.5; }
 
   @media (min-width: 900px) {
-    .bridal-card { padding: var(--sp-2xl); }
+    .bridal-card {
+      padding: var(--sp-xl);
+      display: flex;
+      flex-direction: column;
+    }
+    .bridal-card__desc {
+      font-size: 0.88rem;
+    }
+    .bridal-price {
+      margin-top: auto;
+      font-size: 2.25rem;
+    }
   }
 `;
 

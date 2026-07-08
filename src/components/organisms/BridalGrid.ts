@@ -4,6 +4,9 @@ import { renderBridalCard } from '../molecules/BridalCard';
 import { renaisseData } from '../../data/renaisse';
 
 const css = `
+  #bridal-stack {
+    border-top: 1px solid rgba(232,190,88,0.10);
+  }
   .bridal-grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-md); }
 
   @media (min-width: 600px) {
@@ -12,9 +15,9 @@ const css = `
 
   @media (min-width: 900px) {
     .bridal-grid {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
       align-items: stretch;
-      gap: var(--sp-xl);
+      gap: var(--sp-lg);
     }
     .bridal-card--highlight {
       border: 1px solid rgba(232,190,88,0.35);
@@ -29,11 +32,11 @@ export const renderBridalGrid = (): string => {
       const cardHTML = renderBridalCard(bridal);
       const hasHighlight = 'highlight' in bridal && bridal.highlight;
       const cardClass = hasHighlight ? ' bridal-card--highlight reveal reveal-delay-' + (i + 1) : ' reveal reveal-delay-' + (i + 1);
-      return cardHTML.replace('<div class="bridal-card"', `<div class="bridal-card${cardClass}"`);
+      return cardHTML.replace('<article class="bridal-card"', `<article class="bridal-card${cardClass}"`);
     }).join('');
 
     return `
-    <section class="section" aria-label="Novias">
+    <section class="section" id="bridal-stack" aria-label="Novias">
       ${renderSectionLabel('03', 'Novias')}
       <h2 class="section-title reveal">Tu día <em>perfecto</em></h2>
       <div class="bridal-grid" id="bridal-grid">
